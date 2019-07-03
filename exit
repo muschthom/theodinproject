@@ -1,0 +1,35 @@
+[33mcommit 1e9330f5a5b616e629283480312c24d61a17dd21[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 19:10:32 2019 +0200
+
+    Add README file
+
+[33mcommit 526afb40faaee3ef6f7355439df9b16ac0658c2c[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 19:05:08 2019 +0200
+
+    test
+
+[33mcommit 54262efe403905b73084f734eaedcf5bfb1e88f4[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 09:56:58 2019 +0200
+
+    updates for heroku deployment
+
+[33mcommit ef1786828296bd8ace0e2068769509876130d03c[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 09:30:00 2019 +0200
+
+    updates for heroku deployment
+
+[33mcommit ee03dad1a41c8e16cd082f2fa394be4bdf5d2713[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 09:18:58 2019 +0200
+
+    updates for heroku deployment
+
+[33mcommit fc989f96ee2cbb66ac763ea45f6dab6a45002d38[m
+Author: muschthom <tom.travels.canada@gmail.com>
+Date:   Tue Jul 2 08:49:38 2019 +0200
+
+    initial commit
