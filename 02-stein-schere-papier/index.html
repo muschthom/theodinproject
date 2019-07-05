@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stein Schere Papier</title>
+
+</head>
+<body>
+<h1>Stein Schere Papier</h1>
+<p id="result">Ergebnis</p>
+<button id="btn">Noch mal spielen/play again</button>
+<script>
+    document.getElementById("btn").onclick = function () {
+        console.log("Btn click");
+
+        location.reload();
+    };
+
+
+
+    let yourChoice = prompt("Deine Wahl: Stein, Schere, Papier");
+
+    let pcChoice = Math.random();
+
+    let pcChoiceFinal = (pcChoice < 0.33)? "Stein": (pcChoice <0.67)? "Schere":"Papier";
+
+    /*
+    if (yourChoice != "Stein" || yourChoice != "Schere" || yourChoice != "Papier"){
+      alert("Falsche Eingabe!");
+    }
+    */
+
+    let pointsPc = 0;
+    let pointsUser = 0;
+    let game = function (playersChoice, computerChoice){
+
+        if (playersChoice === computerChoice){
+            alert("Draw");
+            return;
+        } else if ((playersChoice === "Stein" && computerChoice === "Schere") ||
+            (computerChoice === "Stein" &&  playersChoice === "Papier") ||
+            (playersChoice === "Schere" &&  computerChoice === "Papier")){
+            alert("Du gewinnst!");
+            pointsUser++;
+        } else {
+            alert("Du verlierst!");
+            pointsPc++;
+        }
+        update(pointsUser, pointsPc);
+    };
+
+    game(yourChoice,pcChoiceFinal);
+
+    let update = function (a, b) {
+        document.getElementById("result").innerHtml = "User: " + a + " PC: " + b;
+    }
+
+
+
+</script>
+</body>
+</html>
