@@ -7,22 +7,26 @@
 </head>
 <body>
 <h1>Stein Schere Papier</h1>
-<p id="result">Ergebnis</p>
+<p>Ergebnis</p>
+<p id="result"></p>
 <button id="btn">Noch mal spielen/play again</button>
 <script>
+    let pointsPc = 0;
+    let pointsUser = 0;
     document.getElementById("btn").onclick = function () {
         console.log("Btn click");
 
-        location.reload();
+        let yourChoice = prompt("Deine Wahl: Stein, Schere, Papier");
+
+        let pcChoice = Math.random();
+
+        let pcChoiceFinal = (pcChoice < 0.33)? "Stein": (pcChoice <0.67)? "Schere":"Papier";
+        game(yourChoice,pcChoiceFinal);
+
     };
 
 
 
-    let yourChoice = prompt("Deine Wahl: Stein, Schere, Papier");
-
-    let pcChoice = Math.random();
-
-    let pcChoiceFinal = (pcChoice < 0.33)? "Stein": (pcChoice <0.67)? "Schere":"Papier";
 
     /*
     if (yourChoice != "Stein" || yourChoice != "Schere" || yourChoice != "Papier"){
@@ -30,8 +34,7 @@
     }
     */
 
-    let pointsPc = 0;
-    let pointsUser = 0;
+
     let game = function (playersChoice, computerChoice){
 
         if (playersChoice === computerChoice){
@@ -46,13 +49,14 @@
             alert("Du verlierst!");
             pointsPc++;
         }
-        update(pointsUser, pointsPc);
+        let result = document.getElementsByName("p");
+        result.innerHtml = ("userpoints = " + pointsUser + " pointsPC " + pointsPc);
+        updatePoints(pointsUser, pointsPc);
     };
 
-    game(yourChoice,pcChoiceFinal);
 
-    let update = function (a, b) {
-        document.getElementById("result").innerHtml = "User: " + a + " PC: " + b;
+    function updatePoints (a, b) {
+        document.getElementById("result").innerHTML = "User: " + a + "; PC: " + b;
     }
 
 
