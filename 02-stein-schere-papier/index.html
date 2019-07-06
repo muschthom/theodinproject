@@ -15,27 +15,16 @@
     let pointsUser = 0;
     document.getElementById("btn").onclick = function () {
         console.log("Btn click");
-
         let yourChoice = prompt("Deine Wahl: Stein, Schere, Papier");
-
         let pcChoice = Math.random();
-
         let pcChoiceFinal = (pcChoice < 0.33)? "Stein": (pcChoice <0.67)? "Schere":"Papier";
-        game(yourChoice,pcChoiceFinal);
+        playGame(yourChoice,pcChoiceFinal);
 
     };
 
 
-
-
-    /*
-    if (yourChoice != "Stein" || yourChoice != "Schere" || yourChoice != "Papier"){
-      alert("Falsche Eingabe!");
-    }
-    */
-
-
-    let game = function (playersChoice, computerChoice){
+    //Game mechanics
+    let playGame = function (playersChoice, computerChoice){
 
         if (playersChoice === computerChoice){
             alert("Draw");
@@ -49,12 +38,12 @@
             alert("Du verlierst!");
             pointsPc++;
         }
-        let result = document.getElementsByName("p");
-        result.innerHtml = ("userpoints = " + pointsUser + " pointsPC " + pointsPc);
+        //show result
         updatePoints(pointsUser, pointsPc);
     };
 
 
+    //show result
     function updatePoints (a, b) {
         document.getElementById("result").innerHTML = "User: " + a + "; PC: " + b;
     }
