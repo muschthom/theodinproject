@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db5170c0-f63e-4852-aac1-0bbc6707406d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript-exercises" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript-exercises/helloWorld/helloWorld.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/helloWorld/helloWorld.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,19 +24,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js">
+        <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="85">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.js">
+        <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="187">
+              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -44,8 +50,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/javascript-exercises/helloWorld/helloWorld.js" />
-        <option value="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js" />
         <option value="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.js" />
+        <option value="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.js" />
+        <option value="$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.spec.js" />
+        <option value="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.spec.js" />
+        <option value="$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js" />
+        <option value="$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js" />
       </list>
     </option>
   </component>
@@ -88,6 +98,12 @@
               <item name="03-test-driven-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="03-test-driven-dev" type="462c0819:PsiDirectoryNode" />
               <item name="javascript-exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="removeFromArray" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03-test-driven-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03-test-driven-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript-exercises" type="462c0819:PsiDirectoryNode" />
               <item name="reverseString" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -98,6 +114,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -118,7 +135,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.reverseString.js">
+  <component name="RunManager" selected="Node.js.removeFromArray.js">
+    <configuration name="removeFromArray.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="removeFromArray.js" working-dir="$PROJECT_DIR$/javascript-exercises/removeFromArray">
+      <method v="2" />
+    </configuration>
     <configuration name="reverseString.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="reverseString.js" working-dir="$PROJECT_DIR$/javascript-exercises/reverseString">
       <method v="2" />
     </configuration>
@@ -127,6 +147,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.removeFromArray.js" />
         <item itemvalue="Node.js.reverseString.js" />
         <item itemvalue="Node.js.reverseString.spec.js" />
       </list>
@@ -142,19 +163,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562998163869</updated>
-      <workItem from="1562998166259" duration="1092000" />
+      <workItem from="1562998166259" duration="5535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1092000" />
+    <option name="totallyTimeSpent" value="5535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21726191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21726191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
@@ -162,7 +183,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -190,20 +211,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js">
+    <entry file="file://$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="221">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript-exercises/removeFromArray/removeFromArray.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.spec.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript-exercises/repeatString/repeatString.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -211,6 +243,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript-exercises/reverseString/reverseString.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
         </state>
       </provider>
     </entry>
