@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<h1>
+    DOM MANIPULATION
+</h1>
+<div id="container">
+    <div class="content">
+        <p>Exercise from https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation?ref=lnav</p>
+    </div>
+</div>
+<button onclick="alert('Hello World')">Click Me</button>
+<button id="btn">Click Me</button>
+<button id="btn2">Click Me Too</button></body>
+<script>
+    const container = document.querySelector('#container');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'This is the glorious text-content!';
+
+    const para1 = document.createElement("p");
+    para1.textContent = "Hey I am red!";
+    para1.style.color = "red";
+
+    const head3 = document.createElement("h3");
+    head3.textContent = "I am a blue h3!";
+    head3.style.color = "blue";
+
+    const divi = document.createElement("div");
+    divi.style.border = "1px solid black";
+    divi.style.backgroundColor = "pink";
+
+    const divHead = document.createElement("h1");
+    divHead.textContent = "I am a div head";
+
+    const para2 = document.createElement("p");
+    para2.textContent = "Div Content";
+
+    divi.append(divHead);
+    divi.append(para2);
+
+
+    container.appendChild(content);
+    container.append(para1);
+    container.append(head3);
+    container.append(divi);
+
+    /*
+    let btn = document.querySelector('#btn');
+    btn.onclick = () => alert("Hello World");
+
+     */
+
+    btn.addEventListener('click', function(e){
+        e.target.style.background = 'blue';
+    });
+
+    let btn2 = document.querySelector('#btn2');
+    btn2.addEventListener('click', () => {
+        alert("Hello World");
+    });
+</script>
+</html>
