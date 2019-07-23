@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stein Schere Papier</title>
+
+</head>
+<body>
+<h1>Stein Schere Papier</h1>
+<h2>Wähle!</h2>
+
+<button class="stein" id="1">Stein</button>
+<button class="schere" id="2">Schere</button>
+<button class="papier" id="3">Papier</button>
+
+<p>Ergebnis</p>
+<p id="result"></p>
+<h2>History: </h2>
+<ul id="history"></ul>
+<script>
+    let pointsPc = 0;
+    let pointsUser = 0;
+    let userChoice;
+    let winner;
+    let round = 0;
+
+    //PC Choice
+    let pcChoice = function () {
+        let pcChoice = Math.random();
+        let pcChoiceFinal = (pcChoice < 0.33) ? "Stein" : (pcChoice < 0.67) ? "Schere" : "Papier";
+        return pcChoiceFinal;
+    };
+
+    //Game mechanics
+    let playGame = function (playersChoice, computerChoice) {
+        round++; 
+        if (playersChoice === computerChoice) {
+            alert("Draw");
+            winner = "draw";
+            return;
+        } else if ((playersChoice === "Stein" && computerChoice === "Schere") ||
+            (computerChoice === "Stein" && playersChoice === "Papier") ||
+            (playersChoice === "Schere" && computerChoice === "Papier")) {
+            pointsUser++;
+            winner = "User";
+            alert("Du gewinnst!");
+        } else {
+            pointsPc++;
+            winner = "PC";
+            alert("Du verlierst!");
+        }
+        //show result
+
+    };
+
+
+    //show result
+    function updatePoints(a, b) {
+        document.getElementById("result").innerHTML = "User: " + a + "; PC: " + b;
+    }
+
+    function addHistory(a, b, c) {
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Round " + round + " = User: " + a + "; PC: " + b + "; -> Gewinner: " + winner);
+        node.appendChild(textnode);
+        document.getElementById("history").appendChild(node);
+    }
+
+
+    for (let i = 1; i < 4; i++) {
+        document.getElementById("" + i).onclick = function () {
+            console.log("this.innerHTML = " + this.innerHTML);
+            userChoice = this.innerHTML;
+            playGame(userChoice, pcChoice());
+            addHistory(userChoice, pcChoice(), round);
+            updatePoints(pointsUser, pointsPc);
+
+
+        };
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
