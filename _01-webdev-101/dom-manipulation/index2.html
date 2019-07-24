@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<h1>
+    DOM MANIPULATION - Table
+</h1>
+<div id="container">
+    <div class="content">
+        <p>Exercise from http://eloquentjavascript.net/14_dom.html</p>
+    </div>
+</div>
+<h1>Mountains from Array</h1>
+<div id="mountains">
+
+</div>
+
+<script>
+    let headCol;
+    let dataCol;
+    let divMount = document.getElementById("mountains");
+
+    const MOUNTAINS = [
+        {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+        {name: "Everest", height: 8848, place: "Nepal"},
+        {name: "Mount Fuji", height: 3776, place: "Japan"},
+        {name: "Vaalserberg", height: 323, place: "Netherlands"},
+        {name: "Denali", height: 6168, place: "United States"},
+        {name: "Popocatepetl", height: 5465, place: "Mexico"},
+        {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+    ];
+
+    let table = document.createElement("table");
+    let keys = Object.keys(MOUNTAINS[0]);
+    let tBody = document.createElement("tbody");
+    console.log("keys = " + keys);
+
+    let row = document.createElement("tr");
+
+    for (let i = 0; i < keys.length; i++) {
+
+        headCol = document.createElement("th");
+        headCol.appendChild(document.createTextNode(keys[i]));
+        row.appendChild(headCol);
+        table.appendChild(row);
+        console.log("colHead= " + headCol);
+    }
+
+
+    for (let i = 0; i < MOUNTAINS.length; i++) {
+        let row1 = document.createElement("tr");
+        let data = Object.values(MOUNTAINS[i]);
+
+        for (let j = 0; j < data.length; j++) {
+            console.log("data = " + data);
+
+            dataCol = document.createElement("td");
+            if (!isNaN(data[j])){
+                dataCol.style.textAlign = ("right");
+            }
+            dataCol.appendChild(document.createTextNode(data[j]));
+            row1.appendChild(dataCol);
+            table.appendChild(row1);
+        }
+    }
+
+    divMount.appendChild(table);
+
+
+</script>
+</html>
