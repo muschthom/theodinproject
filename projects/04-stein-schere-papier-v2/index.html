@@ -13,7 +13,7 @@
 <button class="schere" id="2">Schere</button>
 <button class="papier" id="3">Papier</button>
 
-<p>Ergebnis</p>
+
 <p id="result"></p>
 <h2>History: </h2>
 <ul id="history"></ul>
@@ -33,7 +33,7 @@
 
     //Game mechanics
     let playGame = function (playersChoice, computerChoice) {
-        round++; 
+        round++;
         if (playersChoice === computerChoice) {
             alert("Draw");
             winner = "draw";
@@ -56,7 +56,7 @@
 
     //show result
     function updatePoints(a, b) {
-        document.getElementById("result").innerHTML = "User: " + a + "; PC: " + b;
+        document.getElementById("result").innerHTML = "Ergebnis = User: " + a + "; PC: " + b;
     }
 
     function addHistory(a, b, c) {
