@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<h1>
+    DOM MANIPULATION - Image moving
+</h1>
+<div id="container">
+    <div class="content">
+        <p>Exercise from http://eloquentjavascript.net/14_dom.html</p>
+        <p style="text-align: center">
+            <img src="img/fein.jpg" id="1" style="position: relative;">
+            <img src="img/fein.jpg" id="2" style="position: relative;">
+        </p>
+    </div>
+</div>
+</p>
+
+<script>
+    let painting = document.getElementById("1");
+    let painting2 = document.getElementById("2");
+    let imgHeight = painting2.naturalHeight;
+    console.log("img height = " + imgHeight);
+    let angle = Math.PI / 2;
+    function animate(time, lastTime) {
+        if (lastTime != null) {
+            angle += (time - lastTime) * 0.001;
+        }
+        painting.style.top = (Math.sin(angle) * 20) + "px";
+        painting2.style.top = ((Math.sin(angle) * 20) - 480) + "px";
+        painting.style.left = (Math.cos(angle) * 200) + "px";
+        painting2.style.left = -(Math.cos(angle) * 200) + "px";
+        requestAnimationFrame(newTime => animate(newTime, time));
+    }
+    requestAnimationFrame(animate);
+
+</script>
+</html>
