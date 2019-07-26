@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a scetchpad</title>
+
+</head>
+<body>
+<h1>a scetchpad</h1>
+<p>from <a href="https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project?ref=lnav">theodinproject.com</a></p>
+<button id="btn">Reset</button>
+<div id="main">
+</div>
+<script>
+   let main = document.getElementById("main");
+   let nbrFields = 10; //initial pad 10 x 10
+
+
+   //function changing color of mouseover-target
+   let changeColor = function (e) {
+       console.log("e.target = " + e.target);
+       e.target.style.background = "blue";
+   };
+
+   //function create pad with 10 x 10 fields or number entered in prompt
+   let createPad = function(nbr){
+       let widthScreen = window.innerWidth;
+       console.log("widthScreen = " +  widthScreen);
+       let widthDiv = (widthScreen - 40) / nbr;
+       console.log("widthDiv = " + widthDiv);
+       for (let i = 0; i<nbr; i++){
+           for (let j = 0; j < nbr; j++){
+               let div = document.createElement("div");
+               div.style.width = widthDiv.toString()+"px";
+               div.style.height = widthDiv.toString()+"px";
+               div.style.background = "#123456";
+               div.style.float = "left";
+               div.style.float = "left";
+               div.classList.add("paint");
+               main.appendChild(div);
+
+               //eventlistener for hover
+               div.addEventListener("mouseover", changeColor, false);
+           }
+       }
+   };
+
+
+   //reset pad: remove all, then dreate div's
+   let reset = function() {
+       while(main.hasChildNodes()){
+           console.log("remove");
+           main.removeChild(main.childNodes[0]);
+       }
+       console.log("reset");
+       let nbrInput = prompt("Wie viele Kästchen sollen es sein?");
+       createPad(nbrInput);
+   };
+
+   //btn Eventlistener
+   let btn = document.getElementById("btn");
+   btn.addEventListener("click", reset, false);
+
+   createPad(nbrFields);
+
+
+</script>
+</body>
+</html>
