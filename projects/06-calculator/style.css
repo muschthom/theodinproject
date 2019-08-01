@@ -1,59 +1,112 @@
-#display, #btn {
-    width: 100%;
+@media only screen and (min-width: 600px) {
+    #main {
+        margin: 0 auto 0 auto;
+    }
+
+    #display {
+        margin-right: 3%;
+    }
 }
 
-#btn {
-    height: 80%;
+@media only screen and (max-width: 900px) {
+
+
+    #display {
+        width: 100%;
+    }
+
+    #btn {
+        width: 98%;
+        margin: 0;
+    }
+
+    #btn {
+        position: absolute;
+        top: 32%;
+    }
+
+    #display {
+        height: 20%;
+        font-size: 110%;
+    }
+
+    body {
+        background-color: #000;
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+    button {
+        width: 20%;
+        height: 2em;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        background: #222;
+        color: #666;
+        border: 1px solid #222;
+        border-radius: 2em;
+        font-size: 2em;
+        margin: 1.9%;
+        transition-property: background;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+
+    button:last-child {
+        width: 45%;
+        background-color: beige;
+    }
+
+    button:active {
+        background: #444;
+    }
+
+
+    p {
+        max-width: 100%;
+        text-align: end;
+        font-size: 2em;
+        display: block;
+        color: beige;
+    }
+
+    #result {
+        font-size: 3em;
+        top: 0.8em;
+        position: fixed;
+        text-align: right;
+        width: 96%;
+
+    }
+
+    #formula {
+        opacity: 0.7;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        margin-top: 0;
+
+    }
 }
 
-#display {
-    height: 20%;
-    font-size: 110%;
-    line-height: 0;
-}
+@media (orientation: landscape) {
+    button {
+        margin: 0.4% 1% 0 1%;
+        height: 2em;
+        font-size: 1.2em;
+        width: 22%;
+    }
+    button:last-child{
+        width: 47%;
+    }
 
-body {
-    background-color: #000;
-    font-family: 'Poppins', sans-serif;
+    #result{
+        font-size: 2em;
+    }
 
-}
+    #formula{
+        font-size: 1.5em;
+    }
 
-button {
-    width: 20%;
-    height: 2em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    background-color: #222;
-    color: #666;
-    border: 1px solid #222;
-    border-radius: 2em;
-    font-size: 2em;
-    margin: 1.9%;
-}
 
-button:last-child {
-    width: 45%;
-    color: #123456;
-    background-color: beige;
-}
-
-button:active {
-    background-color: #333;
-}
-
-p {
-    width: 100%;
-    text-align: end;
-    font-size: 2em;
-    background-color: #123456;
-    display: block;
-    color: beige;
-}
-
-#result {
-    font-size: 4em;
-}
-
-#formula {
-    opacity: 0.7;
 }
