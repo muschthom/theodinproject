@@ -85,12 +85,7 @@ let btnPush = btnArray.forEach(function (el) {
             if(nbr1.length > 8){
                 val = "";
             }
-            /*
-            if(nbr1 === "0" && val === "0"){
-                val = "";
-            }
 
-             */
             if (nbr1 === "0"){
                 nbr1 = "";
             }
@@ -127,10 +122,16 @@ let btnPush = btnArray.forEach(function (el) {
 
 
         if (val === "," && operationSet === false && commaSet1 === false) {
+            if(nbr1 === ""){
+                nbr1 = "0";
+            }
             nbr1 = nbr1 + ".";
             commaSet1 = true;
         }
         if (val === "," && operationSet === true && commaSet2 === false) {
+            if(nbr2 === ""){
+                nbr2 = "0";
+            }
             nbr2 = nbr2 + ".";
             commaSet2 = true;
 
@@ -159,6 +160,7 @@ let btnPush = btnArray.forEach(function (el) {
 
             }
             if (nbr2 === "") {
+                operator = "+";
                 nbr2 = 0;
             }
 
