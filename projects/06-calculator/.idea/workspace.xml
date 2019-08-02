@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0a27db-eaab-4f93-98eb-5730e0c73f3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-726">
-              <caret line="132" column="13" lean-forward="true" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+            <state relative-caret-position="306">
+              <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -36,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalize.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="5933">
               <caret line="349" selection-start-line="349" selection-end-line="349" />
             </state>
           </provider>
@@ -45,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="986">
               <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
             </state>
           </provider>
@@ -147,11 +148,12 @@
       <workItem from="1557557573940" duration="1213000" />
       <workItem from="1564582630083" duration="15221000" />
       <workItem from="1564667341757" duration="12859000" />
+      <workItem from="1564747411117" duration="342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48310000" />
+    <option name="totallyTimeSpent" value="48652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -181,13 +183,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../wetterapp-unfinished/wetterapp/index.html" />
-    <entry file="file://$PROJECT_DIR$/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -195,17 +190,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5933">
+          <caret line="349" selection-start-line="349" selection-end-line="349" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="986">
           <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="132" column="13" lean-forward="true" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
         </state>
       </provider>
     </entry>

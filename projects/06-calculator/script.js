@@ -85,6 +85,15 @@ let btnPush = btnArray.forEach(function (el) {
             if(nbr1.length > 8){
                 val = "";
             }
+            /*
+            if(nbr1 === "0" && val === "0"){
+                val = "";
+            }
+
+             */
+            if (nbr1 === "0"){
+                nbr1 = "";
+            }
             nbr1 += val;
             console.log("nbr1 = " + nbr1);
         }
@@ -131,6 +140,10 @@ let btnPush = btnArray.forEach(function (el) {
             if(nbr2.length >= 8){
                 val = "";
             }
+            if (nbr2 === "0"){
+                nbr2 = "";
+            }
+
             nbr2 += val;
             console.log("nbr2 = " + nbr2);
         }
