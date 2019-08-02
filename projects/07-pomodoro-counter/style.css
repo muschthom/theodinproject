@@ -1,0 +1,95 @@
+img {
+    width: 40px;
+}
+
+body {
+    background-color: #999;
+    font-family: 'Poppins', sans-serif;
+}
+
+#main >{
+    margin: 0 auto 0 auto;
+    width: auto;
+}
+button {
+    background-color: #999;
+    border: none;
+    border-radius: 50%;
+    transition-property: background;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    background-size: 40px;
+}
+
+
+button:active {
+    background: #444;
+}
+
+.worker {
+    text-align: center;
+}
+
+
+.setting  {
+    display: inline-block;
+    width: 48%;
+    text-align: end;
+}
+
+.setting >  {
+
+}
+
+#workNbr, #breakNbr {
+    display: inline-block;
+}
+
+.edit {
+    display: block;
+}
+
+#counter {
+    align-content: center;
+}
+
+p {
+    font-size: 7em;
+    line-height: 0;
+}
+
+
+#play {
+    background-image: url('img/play.png');
+    width: 40px;
+    height: 40px;
+}
+#stop {
+    background-image: url('img/stop.png');
+    width: 40px;
+    height: 40px;
+}
+#pause {
+    background-image: url('img/pause.png');
+    width: 40px;
+    height: 40px;
+}
+
+#restart {
+    background-image: url('img/update-arrows.png');
+    width: 40px;
+    height: 40px;
+}
+
+#workUp, #breakUp {
+    background-image: url('img/up.png');
+    width: 40px;
+    height: 40px;
+}
+
+
+#workDown, #breakDown {
+    background-image: url('img/down.png');
+    width: 40px;
+    height: 40px;
+}
