@@ -24,7 +24,7 @@
         position: absolute;
         top: 32%;
         padding-left: 1em;
-        padding-right: 1em; 
+        padding-right: 1em;
     }
 
     #display {
@@ -35,7 +35,6 @@
     body {
         background-color: #000;
         font-family: 'Poppins', sans-serif;
-        margin: 2em 0 2em 0;
 
     }
 
@@ -75,7 +74,7 @@
 
     #result {
         font-size: 3em;
-        top: 1.3em;
+        top: 1em;
         position: fixed;
         text-align: right;
         width: 96%;
