@@ -23,6 +23,8 @@
     #btn {
         position: absolute;
         top: 32%;
+        padding-left: 1em;
+        padding-right: 1em; 
     }
 
     #display {
@@ -33,7 +35,7 @@
     body {
         background-color: #000;
         font-family: 'Poppins', sans-serif;
-        margin: 1em 0 1em 0;
+        margin: 2em 0 2em 0;
 
     }
 
@@ -46,7 +48,7 @@
         color: #666;
         border: 1px solid #222;
         border-radius: 2em;
-        font-size: 2em;
+        font-size: 1.8em;
         margin: 1%;
         transition-property: background;
         transition-duration: 0.2s;
