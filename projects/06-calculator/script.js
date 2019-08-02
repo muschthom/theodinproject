@@ -136,11 +136,14 @@ let btnPush = btnArray.forEach(function (el) {
         }
         if (val === "=") {
             equal = true;
+            commaSet2 = false;
+
             console.log("nbr1 = " + nbr1 + " nbr2 = " + nbr2);
             if (nbr1 === "") {
                 nbr1 = 0;
                 nbr2 = 0;
                 operator = "+";
+
             }
             if (nbr2 === "") {
                 nbr2 = 0;
