@@ -7,10 +7,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#main >{
+#main {
     margin: 0 auto 0 auto;
-    width: auto;
+    width: 350px;
 }
+
+h1, #nav, #counter, h2 {
+    text-align: center;
+}
+
 button {
     background-color: #999;
     border: none;
@@ -24,6 +29,7 @@ button {
 
 button:active {
     background: #444;
+    opacity: 0.1;
 }
 
 .worker {
@@ -31,14 +37,14 @@ button:active {
 }
 
 
-.setting  {
+
+
+.setting {
     display: inline-block;
-    width: 48%;
-    text-align: end;
 }
 
-.setting >  {
-
+#mod {
+    text-align: center;
 }
 
 #workNbr, #breakNbr {
@@ -64,11 +70,13 @@ p {
     width: 40px;
     height: 40px;
 }
+
 #stop {
     background-image: url('img/stop.png');
     width: 40px;
     height: 40px;
 }
+
 #pause {
     background-image: url('img/pause.png');
     width: 40px;
