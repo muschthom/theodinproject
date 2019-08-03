@@ -7,9 +7,13 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+p{
+    margin-top: 60px;
+}
+
 #main {
     margin: 0 auto 0 auto;
-    width: 350px;
+    width: 320px;
 }
 
 h1, #nav, #counter, h2 {
@@ -45,6 +49,7 @@ button:active {
 
 #mod {
     text-align: center;
+    margin-top: -40px; 
 }
 
 #workNbr, #breakNbr {
