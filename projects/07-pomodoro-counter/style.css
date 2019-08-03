@@ -36,6 +36,10 @@ button:active {
     opacity: 0.1;
 }
 
+button:disabled {
+    opacity: 0.5;
+}
+
 .worker {
     text-align: center;
 }
@@ -49,7 +53,7 @@ button:active {
 
 #mod {
     text-align: center;
-    margin-top: -40px; 
+    margin-top: -40px;
 }
 
 #workNbr, #breakNbr {

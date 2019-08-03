@@ -7,6 +7,9 @@ let countTime = "25:00";
 let min = 25;
 let sec = 0;
 let operating;
+let isPause = false;
+let workRound = 1;
+
 
 let workTimeDisplay = document.getElementById("workNbr");
 workTimeDisplay.innerHTML = workTime.toString();
@@ -27,9 +30,6 @@ btnArray.forEach(function (el) {
                 break;
             case "pause":
                 pause();
-                break;
-            case "stop":
-                stop();
                 break;
             case "restart":
                 restart();
@@ -59,8 +59,11 @@ let operate = function (a, b) {
     }
     let sec = b;
     let timer = setInterval(function () {
+        //to handle pause
         let val = getVal();
-
+        if(!val){
+            clearInterval(timer);
+        }
         if (sec === 59) {
             min -= 1;
         }
@@ -69,11 +72,30 @@ let operate = function (a, b) {
         } else {
             countDown.innerHTML = min + ":" + sec;
         }
-        if (sec < 0 && min === 0 || val === false) {
+
+        if (sec <= 0 && min === 0) {
             clearInterval(timer);
+            if(workRound === 4){
+                return;
+            }
+            if(!isPause) {
+                isPause = true;
+                console.log("ist Pause, workround = " + workRound);
+                operate(breakTime, 59);
+                document.body.style.backgroundColor = "green";
+                btn.style.backgroundColor = "green";
+            } else {
+                workRound++;
+                console.log("ist Arbeit, workround = " + workRound);
+                isPause = false;
+                operate(workTime, 59);
+                document.body.style.backgroundColor = "#999";
+                btn.style.backgroundColor = "#999";
+
+            }
             return false;
-        } else if (sec < 0) {
-            sec = 59;
+        } else if (sec <= 0) {
+            sec = 60;
         }
         sec--;
 
@@ -101,8 +123,13 @@ let play = function () {
     if (operate !== true) {
         operate(min, sec);
     }
+
     document.getElementById("play").disabled = true;
     document.getElementById("pause").disabled = false;
+    document.getElementById("workUp").disabled = true;
+    document.getElementById("workDown").disabled = true;
+    document.getElementById("breakUp").disabled = true;
+    document.getElementById("breakDown").disabled = true;
 
 };
 
@@ -113,12 +140,9 @@ let pause = function () {
     document.getElementById("play").disabled = false;
 };
 
-let stop = function () {
-    console.log("stop");
-};
-
 let restart = function () {
     console.log("restart");
+    location.reload();
 };
 
 let workUp = function () {
