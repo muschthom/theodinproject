@@ -11,6 +11,7 @@ let isPause = false;
 let workRound = 1;
 
 
+
 let workTimeDisplay = document.getElementById("workNbr");
 workTimeDisplay.innerHTML = workTime.toString();
 
@@ -20,10 +21,13 @@ breakTimeDisplay.innerHTML = breakTime.toString();
 let countDown = document.getElementById("countDown");
 countDown.innerHTML = countTime.toString();
 
+
+//add eventlistener to buttons
 btnArray.forEach(function (el) {
     el.addEventListener("click", function (e) {
+
+        // get button id
         let target = e.target.id;
-        console.log("target.id " + target);
         switch (target) {
             case "play":
                 play();
@@ -48,18 +52,19 @@ btnArray.forEach(function (el) {
                 break;
         }
     });
-    console.log("eventlister aktiv");
 });
 
-
+//main function
 let operate = function (a, b) {
     let min = a;
     if (b === 0) {
         b = 59;
     }
     let sec = b;
+
+    //countdown get activated
     let timer = setInterval(function () {
-        //to handle pause
+        //handle pause
         let val = getVal();
         if(!val){
             clearInterval(timer);
@@ -73,25 +78,54 @@ let operate = function (a, b) {
             countDown.innerHTML = min + ":" + sec;
         }
 
+        //time run out
         if (sec <= 0 && min === 0) {
+
+            // sound
+            let audio = new Audio('sound/Computer_Magic-Microsift-1901299923.wav');
+            audio.play();
+
+            //stop counter
             clearInterval(timer);
+
+            //if 4 workrounds -> stop
             if(workRound === 4){
                 return;
             }
+
+            //work time or break time?
+            //enter break time
             if(!isPause) {
                 isPause = true;
-                console.log("ist Pause, workround = " + workRound);
-                operate(breakTime, 59);
-                document.body.style.backgroundColor = "green";
-                btn.style.backgroundColor = "green";
-            } else {
-                workRound++;
-                console.log("ist Arbeit, workround = " + workRound);
-                isPause = false;
-                operate(workTime, 59);
-                document.body.style.backgroundColor = "#999";
-                btn.style.backgroundColor = "#999";
 
+                //update display
+                document.getElementById("round").innerHTML = "BREAK ROUND " + workRound;
+                document.body.style.backgroundColor = "green";
+                btnArray.forEach(function (el) {
+                    el.style.backgroundColor = "green";
+                });
+
+                //restart timer for break
+                operate(breakTime, 59);
+
+            }
+
+            //enter work time
+            else {
+                isPause = false;
+
+                //update work round
+                workRound++;
+
+                //update display
+                document.getElementById("round").innerHTML = "WORK ROUND " + workRound;
+                document.body.style.backgroundColor = "#999";
+                btnArray.forEach(function (el) {
+                    el.style.backgroundColor = "#999";
+                });
+
+                //start work time
+                operate(workTime, 59);
             }
             return false;
         } else if (sec <= 0) {
@@ -114,16 +148,17 @@ let getVal = function () {
 }
 
 let play = function () {
+    document.getElementById("round").innerHTML = "WORK ROUND " + workRound;
+
     let valArr = getCurrentTime();
-    console.log("play");
     min = valArr[0] * 1;
     sec = valArr[1] * 1;
-    console.log("min = " + min + " sec = " + sec);
     operating = true;
     if (operate !== true) {
         operate(min, sec);
     }
 
+    //when started, disable all ex. pause
     document.getElementById("play").disabled = true;
     document.getElementById("pause").disabled = false;
     document.getElementById("workUp").disabled = true;
@@ -136,12 +171,13 @@ let play = function () {
 let pause = function () {
     console.log("pause");
     operating = false;
+    //enable play, disable pause
     document.getElementById("pause").disabled = true;
     document.getElementById("play").disabled = false;
 };
 
 let restart = function () {
-    console.log("restart");
+    //reload
     location.reload();
 };
 

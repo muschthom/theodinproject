@@ -2,6 +2,8 @@ img {
     width: 40px;
 }
 
+
+
 body {
     background-color: #999;
     font-family: 'Poppins', sans-serif;
@@ -13,11 +15,16 @@ p{
 
 #main {
     margin: 0 auto 0 auto;
-    width: 320px;
+    width: 400px;
 }
 
-h1, #nav, #counter, h2 {
+h1, #nav, #counter, h2, #round {
     text-align: center;
+}
+
+#round {
+    font-weight: 600;
+    margin: -20px 0 20px 0;
 }
 
 button {
@@ -47,7 +54,7 @@ button:disabled {
 
 
 
-.setting {
+.setting, .modi {
     display: inline-block;
 }
 
@@ -109,4 +116,12 @@ p {
     background-image: url('img/down.png');
     width: 40px;
     height: 40px;
+}
+
+#credits  {
+    text-align: center;
+}
+
+#work, #break {
+    width: 190px;
 }
