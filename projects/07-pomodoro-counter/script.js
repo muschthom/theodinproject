@@ -69,15 +69,14 @@ let operate = function (a, b) {
         } else {
             countDown.innerHTML = min + ":" + sec;
         }
-        sec--;
-
-
         if (sec < 0 && min === 0 || val === false) {
             clearInterval(timer);
             return false;
         } else if (sec < 0) {
             sec = 59;
         }
+        sec--;
+
     }, 1000);
     return true;
 };
@@ -102,12 +101,16 @@ let play = function () {
     if (operate !== true) {
         operate(min, sec);
     }
+    document.getElementById("play").disabled = true;
+    document.getElementById("pause").disabled = false;
 
 };
 
 let pause = function () {
     console.log("pause");
     operating = false;
+    document.getElementById("pause").disabled = true;
+    document.getElementById("play").disabled = false;
 };
 
 let stop = function () {
