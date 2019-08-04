@@ -90,6 +90,8 @@ let operate = function (a, b) {
 
             //if 4 workrounds -> stop
             if(workRound === 4){
+                document.getElementById("pause").disabled = true;
+                document.getElementById("play").disabled = true;
                 return;
             }
 
