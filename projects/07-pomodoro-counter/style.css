@@ -15,7 +15,7 @@ p{
 
 #main {
     margin: 0 auto 0 auto;
-    width: 400px;
+    max-width: 400px;
 }
 
 h1, #nav, #counter, h2, #round {
