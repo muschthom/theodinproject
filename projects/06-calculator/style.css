@@ -1,114 +1,81 @@
-@media only screen and (min-width: 600px) {
-    #main {
-        margin: 0 auto 0 auto;
-    }
-
-    #display {
-        margin-right: 3%;
-    }
+#main {
+    max-width: 600px;
+    margin: 0 auto 0 auto;
 }
 
-@media only screen and (max-width: 900px) {
-
-
-    #display {
-        width: 98%;
-    }
-
-    #btn {
-        width: 98%;
-        margin: 0;
-    }
-
-    #btn {
-        position: absolute;
-        top: 32%;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    #display {
-        height: 20%;
-        font-size: 110%;
-    }
-
-    body {
-        background-color: #000;
-        font-family: 'Poppins', sans-serif;
-
-    }
-
-    button {
-        width: 19.9%;
-        height: 2em;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        background: #222;
-        color: #666;
-        border: 1px solid #222;
-        border-radius: 2em;
-        font-size: 1.6em;
-        margin: 1%;
-        transition-property: background;
-        transition-duration: 0.2s;
-        transition-timing-function: linear;
-    }
-
-    button:last-child {
-        width: 45%;
-        background-color: beige;
-    }
-
-    button:active {
-        background: #444;
-    }
-
-
-    p {
-        max-width: 100%;
-        text-align: end;
-        font-size: 2em;
-        display: block;
-        color: beige;
-    }
-
-    #result {
-        font-size: 3em;
-        top: 0.8em;
-        position: fixed;
-        text-align: right;
-        width: 96%;
-
-    }
-
-    #formula {
-        opacity: 0.7;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        hyphens: auto;
-        margin-top: 0;
-
-    }
+#display {
+    width: 100%;
+    max-width: 600px;
 }
 
-@media (orientation: landscape) {
-    button {
-        margin: 0.4% 1% 0 1%;
-        height: 2em;
-        font-size: 1.2em;
-        width: 22%;
-    }
-    button:last-child{
-        width: 47%;
-    }
+#btn {
+    width: 98%;
+    max-width: 600px;
+    margin: 0;
+    position: absolute;
+    top: 32%;
+    padding-left: 5%;
+    padding-right: 0;
+}
 
-    #result{
-        font-size: 2em;
-    }
+#display {
+    height: 20%;
+    font-size: 110%;
+}
 
-    #formula{
-        font-size: 1.5em;
-    }
+body {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
 
+}
+
+button {
+    width: 19.9%;
+    height: 2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background: #222;
+    color: #666;
+    border: 1px solid #222;
+    border-radius: 2em;
+    font-size: 1.6em;
+    margin: 1%;
+    transition-property: background;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+button:last-child {
+    width: 42%;
+    background-color: beige;
+}
+
+button:active {
+    background: #444;
+}
+
+
+p {
+    max-width: 600px;
+    width: 100%;
+    text-align: end;
+    font-size: 2em;
+    display: block;
+    color: beige;
+}
+
+#result {
+    font-size: 3em;
+    top: 0.8em;
+    position: absolute;
+
+}
+
+#formula {
+    opacity: 0.7;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-top: 0;
 
 }
