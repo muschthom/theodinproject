@@ -12,11 +12,17 @@
 </p>
 <script>
     function Book(title, author, pages, read) {
-        title = this.title,
-            author = this.author,
-        pages = this.pages,
-            read = this.read
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.info = function () {
+            return (title + ", " + author + ", " + pages + ", " + read);
+        }
     }
+
+    const abc = new Book("abc", "author", "222 pages", true);
+    console.log(abc.info());
 </script>
 </body>
 </html>
