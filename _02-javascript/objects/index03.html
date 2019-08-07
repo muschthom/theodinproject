@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js objects</title>
+
+</head>
+<body>
+<h1>js objects</h1>
+<p>
+    see console...
+</p>
+<script>
+
+    //    Use __proto__ to assign prototypes in a way that any property lookup
+    //    will follow the path: pockets → bed → table → head
+    //http://javascript.info/prototype-inheritance
+
+    let hamster = {
+        stomach: [],
+
+        eat(food) {
+            this.stomach = [food];
+        }
+    };
+
+    let speedy = {
+        __proto__: hamster
+    };
+
+    let lazy = {
+        __proto__: hamster
+    };
+
+    // This one found the food
+    speedy.eat("apple");
+    console.log( "speedy.stomach = " + speedy.stomach ); // apple
+
+    // This one also has it, why? fix please.
+    console.log( "lazy.stomach = " + lazy.stomach ); // apple
+
+</script>
+</body>
+</html>
