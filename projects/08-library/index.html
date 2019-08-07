@@ -9,21 +9,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h1>Library</h1>
-<button id ="add">Add new book</button>
-<div id="main"></div>
+<div id="main">
+    <h1>Library</h1>
+    <div class="block">
+        <button id="add">Add new book</button>
+    </div>
+</div>
 <div id="input" class="hidden">
     <form>
         <h2>Add a new book!</h2>
         Name of book:<br>
-        <input type="text" id = "name" name="name"><br>
+        <input type="text" id="name" name="name"><br>
         Name of author:<br>
-        <input type="text" id = "author" name="author"><br>
+        <input type="text" id="author" name="author"><br>
         Read?<br>
-        <input type="radio" id = "readYes" name="read" value="yes" checked>Yes<br>
-        <input type="radio" id = "readNo" name="read" value="no">No<br/>
+        <input type="radio" id="readYes" name="read" value="yes" checked>Yes<br>
+        <input type="radio" id="readNo" name="read" value="no">No<br/>
     </form>
-    <button>Cancel</button>
+    <button id="cancelBtn">Cancel</button>
     <button id="addBtn">Submit</button>
 </div>
 </body>
