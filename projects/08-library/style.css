@@ -1,0 +1,16 @@
+body {
+    background-color: #999;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+}
+
+#input{
+    background: #bbb;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+.hidden{
+    visibility: hidden;
+}
