@@ -13,15 +13,29 @@
     <h1>Library</h1>
     <div class="block">
         <button id="add">Add new book</button>
+        <div id = "content">
+
+            <table id = "myTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Read?</th>
+                    <th>Switch?</th>
+                    <th>Remove?</th>
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div id="input" class="hidden">
     <form>
         <h2>Add a new book!</h2>
         Name of book:<br>
-        <input type="text" id="name" name="name"><br>
+        <input type="text" id="name" name="name" required><br>
         Name of author:<br>
-        <input type="text" id="author" name="author"><br>
+        <input type="text" id="author" name="author" required><br>
         Read?<br>
         <input type="radio" id="readYes" name="read" value="yes" checked>Yes<br>
         <input type="radio" id="readNo" name="read" value="no">No<br/>
@@ -29,6 +43,9 @@
     <button id="cancelBtn">Cancel</button>
     <button id="addBtn">Submit</button>
 </div>
+<footer>
+    <p>credits: icon by <a href="https://pixabay.com/users/openclipart-vectors-30363/">OpenClipart-Vectors / 27427 images</a> on <a href="https://pixabay.com/vectors/garbage-icon-rubbish-trash-1295900/">pixabay.com</a></p>
+</footer>
 </body>
 <script type="text/javascript" src="script.js"></script>
 
