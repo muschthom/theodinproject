@@ -1,3 +1,4 @@
+//prototype for game participants
 const Player = (name) => {
     let score = 0;
     const getName = () => name;
@@ -8,6 +9,7 @@ const Player = (name) => {
     return {getScore, setScore, getName}
 };
 
+//game and game mechanics -> private access
 let game = function () {
     let name = prompt("Enter your name!");
     let currentState = ["C", "C", "C", "C", "C", "C", "C", "C", "C"];
@@ -38,6 +40,8 @@ let game = function () {
         }
     };
 
+    //user choose button -> get id of button -> set value in array currentState to "x"
+    // -> update board -> switch, who is on (userIsOn)
     let userChoose = function (arr, e) {
         userChoice = "";
         let position = e.id;
@@ -46,9 +50,12 @@ let game = function () {
         userChoice = "x";
         updateBoard(arr);
         userIsOn = false;
+        //to continue the game
         play();
     };
 
+    //pc choice made my Math.random -> set value in array in currentState to "o"
+    // -> update board -> switch, who is on (userIsOn)
     let pcChoose = function (arr) {
         let pcChoice = parseInt((Math.random() * 10) + "");
         console.log("pcChoice = " + pcChoice);
@@ -64,6 +71,7 @@ let game = function () {
 
     };
 
+    //update values of Buttons
     let updateBoard = function (arr) {
         for (let i = 0; i < arr.length; i++) {
             let btn = document.getElementById(i + "");
@@ -74,41 +82,48 @@ let game = function () {
         }
     };
 
+    //update scoreboard
     let updateScore = function (player, htmlElement) {
         let element = document.getElementById(htmlElement);
         element.innerHTML = player.getScore();
     };
 
+    //set names on scoreboard
     let updateName = function (player, htmlElement) {
         let element = document.getElementById(htmlElement);
         element.innerHTML = player.getName();
     };
 
 
+    //create player
     const user = Player(name);
     const pc = Player("PC");
 
+    //set initial scoreboard
     updateName(user, "userName");
     updateScore(user, "user-score");
     updateScore(pc, "pc-score");
 
+    //disable button
     let toggleBtn = function (btn) {
         btn.disabled = true;
     };
 
-
+    //
     let play = function () {
-        if (checkStatus(currentState, checkWinner(currentState)) === false) {
+        let gameIsStillRunning = checkStatus(currentState, checkWinner(currentState));
+        if ( gameIsStillRunning === false) {
             return;
         }
-        if (!userIsOn) {
+        if (!userIsOn && !gameIsStillRunning === true) {
             pcChoose(currentState);
-        }
-        if (checkStatus(currentState, checkWinner(currentState)) === false) {
-            return;
+            checkWinner(currentState);
         }
     };
 
+    //check, if there is a winner
+    //all rows and colums are checked
+    //return endGame(player) = true
     let checkWinner = function (arr) {
         //Check pc score
         if (arr[0] === "o") {
@@ -173,24 +188,34 @@ let game = function () {
     };
 
 
+    //current status of the game:
+    //return false, if game ended
+    //
     let checkStatus = function (arr, end) {
         console.log("check status , end = " + end);
+        //if endGame = true
         if (end === true) {
             gameIsOn = false;
             console.log("game end");
             return false;
         }
         let counter = 0;
+        // check values in array
         for (let i = 0; i < arr.length; i++) {
 
+            //if this value = C in array -> value not set by player -> game is still running
             if (arr[i] === "C") {
                 gameIsOn = true;
                 console.log("game is on");
-            } else {
+            }
+            //value is set -> counter++
+            else {
+                //count filled values in array
                 counter++;
                 console.log("checkStatus round counter " + counter);
-
                 gameIsOn = true;
+
+                //if counter = 8 -> no more options -> end game
                 if (counter === 8) {
                     gameIsOn = false;
                     console.log("game end");
@@ -202,6 +227,7 @@ let game = function () {
         }
     };
 
+    //block all buttons
     let blockBtn = function () {
         let btn = document.querySelectorAll("button.game");
         btn.forEach(function (el) {
@@ -210,6 +236,8 @@ let game = function () {
 
     };
 
+    //there is a winner -> block all buttons
+    //set score -> update score -> return true
     let endGame = function (winner) {
         blockBtn();
         console.log("winner.getName = " + winner.getName());
@@ -223,6 +251,7 @@ let game = function () {
     };
 
 
+    //restart a new game
     document.getElementById("restart").addEventListener("click", function (){
         currentState = ["C", "C", "C", "C", "C", "C", "C", "C", "C"];
         updateBoard(currentState);
@@ -232,11 +261,12 @@ let game = function () {
         })
     });
 
+    //initial board is drawn and set
     drawBoard(currentState);
     updateBoard(currentState);
 
 };
 
-
+//run game
 game();
 
