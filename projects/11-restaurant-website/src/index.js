@@ -11,26 +11,25 @@ let divBG = document.querySelector("#content").appendChild(component("div", ""))
 divBG.id = "divBG";
 
 //add h1 and p
-document.querySelector("#content").appendChild(component("h1", "Headline"));
+document.querySelector("#content").appendChild(component("h1", "THE COFFEESHOP IN TOWN"));
 document.querySelector("#content").appendChild(component("p",
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, " +
     "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna " +
-    "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo " +
-    "duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata " +
-    "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur"));
+    "aliquyam erat, sed diam voluptua. At vero eos"));
 
 //add navbar
 let navbar = document.querySelector("#content").appendChild(component("div", ""));
 navbar.id = "navbar";
 
 //add navbar elements and classes
-let nav1 = navbar.appendChild(component("div", "Nav1"));
-let nav2 = navbar.appendChild(component("div", "Nav2"));
-let nav3 = navbar.appendChild(component("div", "Nav3"));
+let nav1 = navbar.appendChild(component("div", "About"));
+let nav2 = navbar.appendChild(component("div", "Menu"));
+let nav3 = navbar.appendChild(component("div", "Map"));
 let navContent = navbar.appendChild(component("div", ""));
 
 nav1.classList.add("nav");
 nav1.classList.add("1");
+nav1.classList.add("active");
 nav2.classList.add("nav");
 nav2.classList.add("2");
 nav3.classList.add("nav");
@@ -52,19 +51,14 @@ navBtn.forEach(function (el) {
         let clickedBtn = e.target;
         //get class of clicked btn
         myClass = clickedBtn.classList;
-
         toggleClass(navBtn);
         clickedBtn.classList.add("active");
-        console.log("clickedBtn.classList = " + clickedBtn.classList);
-        console.log("myClass = clickedBtn.classList = " + myClass);
-
     });
 });
 
 
 //display logic
 let toggleClass = function (list) {
-    console.log("toggleClass");
     list.forEach(function (e) {
         if (e.classList.contains("active")) {
             console.log("toggleClass if ");
