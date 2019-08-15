@@ -1,0 +1,52 @@
+body {
+    background-color: #777;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+.dark {
+    background-color: #333;
+    display: inline-grid;
+    margin: 1%;
+    padding: 15px;
+}
+
+#projectDiv{
+    width: 25%;
+    min-height: 100px;
+}
+
+#toDoListDiv{
+    width: 60%;
+    min-height: 100px;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #777;
+    color: #555;
+    text-align: center;
+}
+
+.deleteBtn, .editBtn{
+    width: 25px;
+    height: 25px;
+    display: inline;
+    color: #999999;
+    border: none;
+    float: right;
+}
+
+.listNode > h3, .inline {
+    display: inline;
+}
+
+.listNode {
+    background-color: #555;
+}
