@@ -72,10 +72,24 @@ let toggleBlur = function () {
     element.classList.toggle("blur");
 };
 
+function deleteEntry(e, arr) {
+    let id = e.id;
+
+    //search for id in data
+    for (let i = 0; i < arr.length; i++) {
+        //if id found, remove this element
+        if (arr[i].id == id) {
+            console.log("position = " + i);
+            arr.splice(i, 1);
+        }
+    }
+}
+
 
 
 export {
     component,
     ListNode,
-    toggleBlur
+    toggleBlur,
+    deleteEntry
 }

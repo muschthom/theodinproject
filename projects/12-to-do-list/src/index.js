@@ -1,12 +1,13 @@
 // import functions
 import '../src/styles/app.css';
 
-import {showProjects} from './projectDiv';
+import {showProjects, setProjectDiv} from './projectDiv';
 import {showToDoList} from './toDoListDiv';
 import {component, ListNode} from './template';
 function run() {
     let content = document.getElementById("content");
     content.appendChild(component("h1", "", "", "My To-Do-List-App"));
+    setProjectDiv();
     showProjects();
     showToDoList();
     showFooter();
