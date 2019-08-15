@@ -15,15 +15,8 @@ function addProjectToEvents (arr, events){
     events.push(arr);
 }
 
-function addToProject (item, projectArr){
-    projectArr.push(item);
-}
 
-function createProject(name) {
-    let arr = [];
-    arr[0] = name;
-    return arr;
-}
+
 
 export {
     ToDoItem, addToProject, createProject, addProjectToEvents

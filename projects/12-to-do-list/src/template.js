@@ -66,8 +66,16 @@ function ListNode(id, title, descr, dueDate, prio){
     return div;
 }
 
+//make background of input-form blur/unblur
+let toggleBlur = function () {
+    let element = document.getElementById("content");
+    element.classList.toggle("blur");
+};
+
+
 
 export {
     component,
-    ListNode
+    ListNode,
+    toggleBlur
 }

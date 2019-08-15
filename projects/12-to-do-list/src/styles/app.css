@@ -50,3 +50,29 @@ footer {
 .listNode {
     background-color: #555;
 }
+
+#addProject{
+    top: 50px;
+    left: 25%;
+    position: absolute;
+    width: 50%;
+    height: 200px;
+    background-color: #333;
+    padding: 20px;
+}
+
+#addProject button {
+    margin: 20px;
+}
+
+#projectName {
+    display: block;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
