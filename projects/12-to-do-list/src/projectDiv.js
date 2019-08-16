@@ -1,6 +1,7 @@
-import {component, toggleBlur, deleteEntry} from './template';
+import {component, toggleBlur} from './template';
 
 let allEvents = [];
+let projectId = 0;
 
 function setProjectDiv() {
     let content = document.getElementById("content");
@@ -20,21 +21,23 @@ function showProjects() {
     projectDiv.appendChild(component("h2", "", "", "Projects/Events"));
 
     //add Button to add new projects
-    addBtn(projectDiv);
+    addBtn(projectDiv, "Add a project/event");
     console.log("show Projects");
     for (let i = 0; i < allEvents.length; i++) {
-        let div = component("div", "project" + i, "project", allEvents[i][0]);
+        let div = component("div", "project" + allEvents[i][0], "project", allEvents[i][1]);
         projectDiv.appendChild(div);
 
-        let btnEdit = component("div", "projectEditBtn" + i, "editBtn","");
+        let btnEdit = component("div", "pEditbtn" + allEvents[i][0], "editBtn", "");
         btnEdit.style.background = "url('../src/img/edit.png')";
         btnEdit.style.backgroundSize = "25px 25px";
         btnEdit.addEventListener("click", function () {
             //deleteEntry(this, myLibrary);
-            prompt("btnEdit Projekt")
+            editProjectDialog(this, allEvents);
+            toggleBlur();
+
         });
 
-        let btnDelete = component("div", "projectBtnDelete" + i, "deleteBtn","");
+        let btnDelete = component("div", "pDeleteBtn" + allEvents[i][0], "deleteBtn", "");
         btnDelete.style.background = "url('../src/img/delete.png')";
         btnDelete.style.backgroundSize = "25px 25px";
         btnDelete.addEventListener("click", function () {
@@ -43,7 +46,7 @@ function showProjects() {
             if (r === true) {
                 //delete project
                 console.log("delete project");
-                //deleteEntry(this, allEvents);
+                deleteProject(this, allEvents);
 
             } else {
                 console.log("keep project");
@@ -54,9 +57,10 @@ function showProjects() {
     }
 }
 
-function addBtn(parent) {
+function addBtn(parent, content) {
     let btnAddProject = document.createElement("button");
-    btnAddProject.innerHTML = "Add a project/event";
+    btnAddProject.innerHTML = content;
+        //"Add a project/event";
     btnAddProject.addEventListener("click", function () {
         console.log("btnAddProject");
         addProjectDialog();
@@ -89,13 +93,63 @@ function addProjectDialog() {
     document.body.appendChild(div);
 }
 
+function editProjectDialog(e, arr) {
+    let div = component("div", "editProject", "", "");
+    let head = component("h3", "", "", "Edit project");
+    let form = component("form", "editProjectForm", "", "");
+    let label = component("p", "", "", "Name of project");
+    let id = e.id;
+    console.log("e = " + e);
+    console.log("e.id = " + e.id);
+    id = id.slice(8);
+    console.log("id = " + id);
+    let projectName, arrPosition;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][0] == id) {
+            projectName = arr[i][1];
+            arrPosition = i;
+        }
+    }
+    let input = component("input", "projectNameEdit", "", "");
+    input.value = projectName;
+    let btnConfirmEditProject = component("button", "btnConfirmEditProject", "", "Edit Project");
+    btnConfirmEditProject.addEventListener("click", function () {
+        let name = document.getElementById("projectNameEdit").value;
+        editProject(allEvents, arrPosition, name);
+    });
+    let btnCancelEditProject = component("button", "btnCancelEditProject", "", "Cancel");
+    btnCancelEditProject.addEventListener("click", function () {
+        deleteDiv("#editProject");
+    });
+
+
+    div.appendChild(head);
+    form.appendChild(label);
+    form.appendChild(input);
+    div.appendChild(form);
+    div.appendChild(btnCancelEditProject);
+    div.appendChild(btnConfirmEditProject);
+    document.body.appendChild(div);
+}
+
 function createProject(name) {
     console.log("createProjecct");
     let arr = [];
-    arr[0] = name;
+    arr[0] = projectId;
+    arr[1] = name;
     allEvents.push(arr);
     console.table(allEvents);
     deleteDiv("#addProject");
+    showProjects();
+    projectId++;
+    console.log("projectId");
+}
+
+function editProject(arr, id, name) {
+    arr[id][1] = name;
+    console.table(allEvents);
+    deleteDiv("#editProject");
+    //toggleBlur();
     showProjects();
 }
 
@@ -107,4 +161,22 @@ function deleteDiv(selector) {
 
 }
 
-export {showProjects, setProjectDiv}
+function deleteProject(e, arr) {
+    console.log("e = " + e);
+    console.log("e.id = " + e.id);
+    let id = e.id;
+    id = id.slice(10);
+    //search for id in data
+    for (let i = 0; i < arr.length; i++) {
+        //if id found, remove this element
+        console.log("arr[i][1] = " + arr[i][0] + " ; id = " + id);
+        if (arr[i][0] == id) {
+            console.log("position = " + i);
+            arr.splice(i, 1);
+            console.log("project deleted");
+        }
+    }
+    showProjects();
+}
+
+export {showProjects, setProjectDiv, allEvents}

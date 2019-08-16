@@ -51,7 +51,7 @@ footer {
     background-color: #555;
 }
 
-#addProject{
+#addProject, #editProject{
     top: 50px;
     left: 25%;
     position: absolute;
@@ -61,7 +61,7 @@ footer {
     padding: 20px;
 }
 
-#addProject button {
+#addProject button, #editProject button {
     margin: 20px;
 }
 
