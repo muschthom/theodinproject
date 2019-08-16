@@ -72,12 +72,19 @@ let toggleBlur = function () {
     element.classList.toggle("blur");
 };
 
+function deleteDiv(selector) {
+    console.log("deleteDiv");
+    let elem = document.querySelector(selector);
+    elem.parentNode.removeChild(elem);
+    toggleBlur();
 
+}
 
 
 
 export {
     component,
     ListNode,
-    toggleBlur
+    toggleBlur,
+    deleteDiv
 }

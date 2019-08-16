@@ -51,12 +51,12 @@ footer {
     background-color: #555;
 }
 
-#addProject, #editProject{
+#addProject, #editProject, #addToDo{
     top: 50px;
     left: 25%;
     position: absolute;
     width: 50%;
-    height: 200px;
+    min-height: 200px;
     background-color: #444;
     padding: 20px;
 }

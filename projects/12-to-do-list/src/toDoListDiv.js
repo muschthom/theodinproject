@@ -1,7 +1,8 @@
-import {component, ListNode, toggleBlur} from './template';
-import {allEvents, addBtn} from './projectDiv';
+import {component, ListNode, toggleBlur, deleteDiv} from './template';
+import {allEvents} from './projectDiv';
 
 let toDoCounter = 0;
+
 class ToDoItem {
     constructor(id, title, descr, dueDate, prio) {
         this.id = id;
@@ -18,37 +19,40 @@ console.log(x);
 
 let node = new ListNode(x.id, x.title, x.descr, x.dueDate, x.prio);
 
-function addToProject (item, projectArr){
+
+function addToProject(item, projectArr) {
     projectArr.push(item);
 }
 
 
-
-function showToDoList(){
+function showToDoList() {
     let content = document.getElementById("content");
     let toDoListDiv = content.appendChild(component("div", "toDoListDiv", "dark", ""));
     toDoListDiv.appendChild(component("h2", "", "", "Headline Project-To-Dos"));
     let addToDo = addToDoBtn(toDoListDiv, "Add a new To Do");
     addToDo.addEventListener("click", function () {
         addToProject(node, allEvents[0]);
-
     });
-
     console.log("showToDoList");
-    //toDoListDiv.appendChild(node);
+    if(allEvents === []) {
+    }else{
+        toDoListDiv.appendChild(node);
+    }
 }
+
+
 
 
 function addToDoBtn(parent, content) {
     let btnAddToDo = document.createElement("button");
     btnAddToDo.innerHTML = content;
     //"Add a project/event";
-    btnAddProject.addEventListener("click", function () {
+    btnAddToDo.addEventListener("click", function () {
         console.log("btnAddToDo");
         addToDoDialog();
         toggleBlur();
     });
-    parent.appendChild(btnAddProject);
+    parent.appendChild(btnAddToDo);
 }
 
 function addToDoDialog() {
@@ -58,25 +62,34 @@ function addToDoDialog() {
     let form = component("form", "createToDo", "", "");
     let labelName = component("p", "", "", "Name of To Do");
     let toDoName = component("input", "toDoName", "", "");
-    let labelDescr = component("p", "", "", "Name of To Do");
+    let labelDescr = component("p", "", "", "Description");
     let toDoDescr = component("input", "toDoName", "", "");
-    let labelDate = component("p", "", "", "Name of To Do");
+    let labelDate = component("p", "", "", "Date");
     let toDoDate = component("input", "toDoName", "", "");
-    let labelPrio = component("p", "", "", "Name of To Do");
+    toDoDate.type = "date"; 
+    let labelPrio = component("p", "", "", "Priority");
     let toDoPrio = component("input", "toDoName", "", "");
     let btnCreateToDo = component("button", "btnCreateToDo", "", "Create To Do");
     btnCreateToDo.addEventListener("click", function () {
         //createToDo();
+        console.log("btnCreateToDo");
     });
-    let btnCancelProject = component("button", "btnCancelProject", "", "Cancel");
-    btnCancelProject.addEventListener("click", function () {
-        deleteDiv("#addProject");
+    let btnCancelToDo = component("button", "btnCancelToDo", "", "Cancel");
+    btnCancelToDo.addEventListener("click", function () {
+        console.log("btnCancelToDo");
+        deleteDiv("#addToDo");
     });
-    form.appendChild(label);
-    form.appendChild(projectName);
+    form.appendChild(labelName);
+    form.appendChild(toDoName);
+    form.appendChild(labelDescr);
+    form.appendChild(toDoDescr);
+    form.appendChild(labelDate);
+    form.appendChild(toDoDate);
+    form.appendChild(labelPrio);
+    form.appendChild(toDoPrio);
     div.appendChild(form);
-    div.appendChild(btnCancelProject);
-    div.appendChild(btnCreateProject);
+    div.appendChild(btnCancelToDo);
+    div.appendChild(btnCreateToDo);
     document.body.appendChild(div);
 }
 

@@ -1,4 +1,4 @@
-import {component, toggleBlur} from './template';
+import {component, toggleBlur, deleteDiv} from './template';
 
 let allEvents = [];
 let projectId = 0;
@@ -153,13 +153,7 @@ function editProject(arr, id, name) {
     showProjects();
 }
 
-function deleteDiv(selector) {
-    console.log("deleteDiv");
-    let elem = document.querySelector(selector);
-    elem.parentNode.removeChild(elem);
-    toggleBlur();
 
-}
 
 function deleteProject(e, arr) {
     console.log("e = " + e);
