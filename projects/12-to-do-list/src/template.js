@@ -22,19 +22,20 @@ function ListNode(id, title, descr, dueDate, prio){
     const header = document.createElement("h3");
     const para = document.createElement("p");
     const date = document.createElement("p");
-    const prior = document.createElement("img");
+    const prior = document.createElement("p");
     let btnEdit = document.createElement("button");
     let btnDelete = document.createElement("button");
 
 
-    div.id = counter;
+    div.id = id;
     div.classList.add("listNode");
-    header.innerHTML = title;
-    para.innerHTML = descr;
-    date.innerHTML = dueDate;
+    header.innerHTML = title + "";
+    para.innerHTML = descr + "";
+    date.innerHTML = dueDate + "";
+    prior.innerHTML = prio + "";
 
     btnEdit.innerHTML = "";
-    btnEdit.setAttribute("id", id);
+    btnEdit.setAttribute("id", "editToDo" + id);
     btnEdit.setAttribute("class", "inline");
     btnEdit.setAttribute("class", "editBtn");
     btnEdit.style.background = "url('../src/img/edit.png')";
@@ -44,7 +45,7 @@ function ListNode(id, title, descr, dueDate, prio){
     });
 
     btnDelete.innerHTML = "";
-    btnDelete.setAttribute("id", id);
+    btnDelete.setAttribute("id", "deleteToDo" + id);
     btnDelete.setAttribute("class", "inline");
     btnDelete.setAttribute("class", "deleteBtn");
     btnDelete.style.background = "url('../src/img/delete.png')";
@@ -53,12 +54,24 @@ function ListNode(id, title, descr, dueDate, prio){
         //deleteEntry(this, myLibrary);
     });
 
-
+    console.log("ok1");
     div.appendChild(header);
+    console.log("ok2");
+
     div.appendChild(btnDelete);
+    console.log("ok3");
+
     div.appendChild(btnEdit);
+    console.log("ok4");
+
     div.appendChild(para);
+    console.log("ok5");
+
     div.appendChild(date);
+    console.log("ok6");
+
+    div.appendChild(prior);
+    console.log("ok7");
 
 
     counter++;
