@@ -1,5 +1,5 @@
 import {component, toggleBlur, deleteDiv} from './template';
-
+import {updateToDos} from './toDoListDiv';
 let allEvents = [];
 let projectId = 0;
 
@@ -25,6 +25,9 @@ function showProjects() {
     console.log("show Projects");
     for (let i = 0; i < allEvents.length; i++) {
         let div = component("div", "project" + allEvents[i][0], "project", allEvents[i][1]);
+        if(i === allEvents.length-1){
+            div.classList.add("active");
+        }
         projectDiv.appendChild(div);
 
         let btnEdit = component("div", "pEditbtn" + allEvents[i][0], "editBtn", "");
@@ -54,6 +57,19 @@ function showProjects() {
         });
         div.appendChild(btnDelete);
         div.appendChild(btnEdit);
+        div.addEventListener("click", function (el) {
+            let clickedDiv = el.target;
+            let list = document.querySelectorAll(".project");
+            list.forEach(function (e) {
+                if (e.classList.contains("active")) {
+                    console.log("toggleClass if ");
+                    e.classList.toggle("active");
+                }
+            });
+            clickedDiv.classList.add("active");
+            updateToDos();
+
+        } )
     }
 }
 
@@ -172,5 +188,6 @@ function deleteProject(e, arr) {
     }
     showProjects();
 }
+
 
 export {showProjects, setProjectDiv, allEvents}

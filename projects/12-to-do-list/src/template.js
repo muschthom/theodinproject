@@ -1,23 +1,24 @@
-let counter = 0;
+import {showProjects, allEvents} from "./projectDiv";
+import {updateToDos, editToDoDialog} from "./toDoListDiv";
 
 function component(type, id, classes, content) {
     const element = document.createElement(type);
 
-    if(id!=="") {
+    if (id !== "") {
         element.id = id;
     }
 
-    if(classes!=="") {
+    if (classes !== "") {
         element.classList.add(classes);
     }
 
-    if(content!=="") {
+    if (content !== "") {
         element.innerHTML = content;
     }
     return element;
 }
 
-function ListNode(id, title, descr, dueDate, prio){
+function ListNode(id, title, descr, dueDate, prio) {
     const div = document.createElement("div");
     const header = document.createElement("h3");
     const para = document.createElement("p");
@@ -41,7 +42,8 @@ function ListNode(id, title, descr, dueDate, prio){
     btnEdit.style.background = "url('../src/img/edit.png')";
     btnEdit.style.backgroundSize = "25px 25px";
     btnEdit.addEventListener("click", function () {
-        //deleteEntry(this, myLibrary);
+        //console.log("this.id = " + this.id);
+        editToDo(this, allEvents);
     });
 
     btnDelete.innerHTML = "";
@@ -51,31 +53,19 @@ function ListNode(id, title, descr, dueDate, prio){
     btnDelete.style.background = "url('../src/img/delete.png')";
     btnDelete.style.backgroundSize = "25px 25px";
     btnDelete.addEventListener("click", function () {
-        //deleteEntry(this, myLibrary);
+        //console.log("this.id = " + this.id);
+        let r = confirm("Do you really want to delete this to-do?");
+        if (r === true) {
+            deleteToDo(this, allEvents);
+        }
     });
 
-    console.log("ok1");
     div.appendChild(header);
-    console.log("ok2");
-
     div.appendChild(btnDelete);
-    console.log("ok3");
-
     div.appendChild(btnEdit);
-    console.log("ok4");
-
     div.appendChild(para);
-    console.log("ok5");
-
     div.appendChild(date);
-    console.log("ok6");
-
     div.appendChild(prior);
-    console.log("ok7");
-
-
-    counter++;
-
     return div;
 }
 
@@ -93,6 +83,39 @@ function deleteDiv(selector) {
 
 }
 
+function editToDo(el, arr) {
+    let id = el.id;
+    id = id.slice(8);
+    console.log("editToDo id = " + id);
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 2; j < arr[i].length; j++) {
+            if (arr[i][j].id == id) {
+                let obj = arr[i][j];
+                editToDoDialog(obj, allEvents);
+
+            }
+        }
+    }
+}
+
+function deleteToDo(el, arr) {
+    let id = el.id;
+    id = id.slice(10);
+    //search for id in data
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 2; j < arr[i].length; j++) {
+            if (arr[i][j].id == id) {
+                console.log("position = " + i);
+                arr[i].splice(j, 1);
+                console.log("to do deleted");
+            }
+        }
+    }
+
+
+    updateToDos();
+
+}
 
 
 export {

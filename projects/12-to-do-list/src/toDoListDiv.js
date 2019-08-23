@@ -13,19 +13,12 @@ class ToDoItem {
     }
 }
 
-let x = new ToDoItem("1", "title", "desc", Date.now(), "prio");
-console.table(x);
-console.log(x);
-
-//let node = new ListNode(x.id, x.title, x.descr, x.dueDate, x.prio);
-
-
 function addToProject(item, projectArr) {
     projectArr.push(item);
 }
 
 
-function updateToDos () {
+function updateToDos() {
     if (allEvents !== []) {
         let toDoListDivFinal = document.querySelector("#toDoListDivFinal");
         try {
@@ -35,17 +28,38 @@ function updateToDos () {
         } catch {
             console.log("catch");
         }
-        //alle to dos anzeigen als new Node
-        for (let i = 0; i < allEvents.length; i++) {
-            for (let j = 2; j < allEvents[i].length; j++) {
-                console.log("allEvents[i][j].id = " + allEvents[i][j].id);
+        try {
+            let activeId = document.querySelector(".active");
+            activeId = activeId.id;
+            activeId = activeId.slice(7);
+            console.log("try activeID slice in updateToDos = " + activeId);
+            for (let i = 0; i < allEvents.length; i++) {
+                if (allEvents[i][0] == activeId) {
+                    for (let j = 2; j < allEvents[i].length; j++) {
+                        // console.log("allEvents[i][j].id = " + allEvents[i][j].id);
 
-                //console.log("allEvents[i][j][id] = " + allEvents[i][j][id]);
-                let node = new ListNode(allEvents[i][j].id, allEvents[i][j].title + "", allEvents[i][j].descr + "",
-                    allEvents[i][j].dueDate + "", allEvents[i][j].prio + "");
-                console.log("node = " + node);
-                //document.querySelector("body").appendChild(node);
-                document.querySelector("#toDoListDivFinal").appendChild(node);
+                        let node = new ListNode(allEvents[i][j].id, allEvents[i][j].title + "", allEvents[i][j].descr + "",
+                            allEvents[i][j].dueDate + "", allEvents[i][j].prio + "");
+                        console.log("node = " + node);
+                        document.querySelector("#toDoListDivFinal").appendChild(node);
+                    }
+                }
+            }
+
+
+        } catch {
+            console.log("catch update to do");
+
+            //alle to dos anzeigen als new Node
+            for (let i = 0; i < allEvents.length; i++) {
+                for (let j = 2; j < allEvents[i].length; j++) {
+                    console.log("allEvents[i][j].id = " + allEvents[i][j].id);
+
+                    let node = new ListNode(allEvents[i][j].id, allEvents[i][j].title + "", allEvents[i][j].descr + "",
+                        allEvents[i][j].dueDate + "", allEvents[i][j].prio + "");
+                    console.log("node = " + node);
+                    document.querySelector("#toDoListDivFinal").appendChild(node);
+                }
             }
         }
     }
@@ -53,29 +67,13 @@ function updateToDos () {
 
 
 function showToDoList() {
-    ///console.log("toDoListDiv vor Erstellung " + toDoListDiv);
-    if(document.querySelector("#toDoListDiv")===null) {
+    if (document.querySelector("#toDoListDiv") === null) {
         let content = document.getElementById("content");
         let toDoListDiv = content.appendChild(component("div", "toDoListDiv", "dark", ""));
         toDoListDiv.appendChild(component("h2", "", "", "Headline Project-To-Dos"));
         let addToDo = addToDoBtn(toDoListDiv, "Add a new To Do");
         let toDoListDivFinal = toDoListDiv.appendChild(component("div", "toDoListDivFinal", "", ""));
     }
-    /*
-    if (allEvents !== []) {
-        //alle to dos anzeigen als new Node
-        for (let i = 0; i < allEvents.length; i++) {
-            for (let j = 2; j <= allEvents[i].length; j++) {
-                let node = new ListNode(allEvents[i][j].id + "", allEvents[i][j].title + "", allEvents[i][j].descr + "",
-                    allEvents[i][j].dueDate + "", allEvents[i][j].prio + "");
-                console.log("node = " + node);
-                //document.querySelector("body").appendChild(node);
-                //document.querySelector("#toDoListDiv").appendChild(node);
-            }
-        }
-    }
-
-     */
 
 }
 
@@ -85,9 +83,11 @@ function addToDoBtn(parent, content) {
     btnAddToDo.innerHTML = content;
     //"Add a project/event";
     btnAddToDo.addEventListener("click", function () {
+
         console.log("btnAddToDo");
         addToDoDialog();
         toggleBlur();
+
     });
     parent.appendChild(btnAddToDo);
 }
@@ -115,13 +115,10 @@ function addToDoDialog() {
         let prio = document.getElementById("toDoPrio").value;
         console.log("create To Do: id = " + id +
             " : title = " + title + " ; descr = " + descr + " dueDate = " + dueDate + " prio = " + prio);
-        createToDo(allEvents[0], id, title, descr, dueDate, prio);
+        createToDo(allEvents, id, title, descr, dueDate, prio);
         console.log("createToDo4 -> all Events = " + allEvents);
-        //document.querySelector("#toDoListDiv").appendChild(node);
-        //toDoListDiv.appendChild(node);
         toDoCounter++;
         deleteDiv("#addToDo");
-        //showToDoList();
         updateToDos();
 
     });
@@ -144,19 +141,101 @@ function addToDoDialog() {
     document.body.appendChild(div);
 }
 
+function editToDoDialog(obj, arr) {
+    toggleBlur();
+    let div = component("div", "editToDoDiv", "", "");
+    let headEdit = component("h3", "", "", "Edit a To Do");
+    div.appendChild(headEdit);
+    let formEdit = component("form", "editToDo", "", "");
+
+
+    let editLabelName = component("p", "", "", "Name of To Do");
+    let editToDoName = component("input", "editToDoName", "", "");
+
+    let editLabelDescr = component("p", "", "", "Description");
+    let editToDoDescr = component("input", "editToDoDescr", "", "");
+    editToDoDescr.value = obj.descr;
+    let editLabelDate = component("p", "", "", "Date");
+    let editToDoDate = component("input", "editToDoDate", "", "");
+    editToDoDate.type = "date";
+    editToDoDate.value = obj.dueDate;
+    let editLabelPrio = component("p", "", "", "Priority");
+    let editToDoPrio = component("input", "editToDoPrio", "", "");
+    editToDoPrio.value = obj.prio;
+    let btnUpdateToDo = component("button", "btnConfirmEditToDo", "", "Update To Do");
+
+
+    btnUpdateToDo.addEventListener("click", function () {
+        let title = document.getElementById("editToDoName").value;
+        let descr = document.getElementById("editToDoDescr").value;
+        let dueDate = document.getElementById("editToDoDate").value;
+        let prio = document.getElementById("editToDoPrio").value;
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 2; j < arr[i].length; j++) {
+                if (arr[i][j].id == obj.id) {
+                    arr[i][j].title = title;
+                    arr[i][j].descr = descr;
+                    arr[i][j].dueDate = dueDate;
+                    arr[i][j].prio = prio;
+
+                }
+            }
+        }
+
+        deleteDiv("#editToDoDiv");
+        updateToDos();
+
+    });
+    let btnCancelEditToDo = component("button", "btnCancelToDo", "", "Cancel");
+    btnCancelEditToDo.addEventListener("click", function () {
+        console.log("btnCancelToDo");
+        deleteDiv("#editToDoDiv");
+    });
+    formEdit.appendChild(editLabelName);
+    formEdit.appendChild(editToDoName);
+    formEdit.appendChild(editLabelDescr);
+    formEdit.appendChild(editToDoDescr);
+    formEdit.appendChild(editLabelDate);
+    formEdit.appendChild(editToDoDate);
+    formEdit.appendChild(editLabelPrio);
+    formEdit.appendChild(editToDoPrio);
+    div.appendChild(formEdit);
+    div.appendChild(btnCancelEditToDo);
+    div.appendChild(btnUpdateToDo);
+    document.body.appendChild(div);
+    let x = document.querySelector("#editToDoName");
+    x.value = obj.title;
+}
+
 function createToDo(arr, id, title, descr, dueDate, prio) {
-    console.log("createToDo1 -> all Events = " + allEvents);
-    console.table(allEvents);
 
-    let newToDo = new ToDoItem(id, title, descr, dueDate, prio);
-    console.log("createToDo2 -> all Events = " + allEvents);
+    try {
+        let activeId = document.querySelector(".active");
+        activeId = activeId.id;
+        console.log("try activeID = " + activeId);
+        activeId = activeId.slice(7);
+        console.log("try activeID slice = " + activeId);
+        let newToDo = new ToDoItem(id, title, descr, dueDate, prio);
+        for (let i = 0; i < arr.length; i++) {
+            console.log("arr[i][0] = " + arr[i][0]);
+            if (arr[i][0] == activeId) {
+                console.log("createToDo arr[i][0] === activeId");
+                arr[i].push(newToDo);
+            }
+        }
 
-    arr.push(newToDo);
-    console.log("createToDo3 -> all Events = " + allEvents);
-    console.table(allEvents);
+
+    } catch {
+        console.log("catch create to do");
+        alert("Create a project first!");
+    }
+
 
 }
 
 export {
-    showToDoList
+    showToDoList,
+    updateToDos,
+    editToDoDialog
 }
