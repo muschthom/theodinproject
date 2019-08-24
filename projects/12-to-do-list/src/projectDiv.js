@@ -1,5 +1,5 @@
 import {component, toggleBlur, deleteDiv} from './template';
-import {updateToDos} from './toDoListDiv';
+import {updateToDos, showAllToDos} from './toDoListDiv';
 let allEvents = [];
 let projectId = 0;
 
@@ -23,6 +23,12 @@ function showProjects() {
     //add Button to add new projects
     addBtn(projectDiv, "Add a project/event");
     console.log("show Projects");
+    let divAllEvents = component("div", "allProjects", "project", "Show all To Dos");
+    projectDiv.appendChild(divAllEvents);
+    divAllEvents.addEventListener("click", function () {
+        console.log("showAllToDos");
+        showAllToDos();
+    });
     for (let i = 0; i < allEvents.length; i++) {
         let div = component("div", "project" + allEvents[i][0], "project", allEvents[i][1]);
         if(i === allEvents.length-1){

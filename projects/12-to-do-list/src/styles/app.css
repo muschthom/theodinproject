@@ -89,3 +89,7 @@ footer {
     background-color: #123456;
     color: yellow;
 }
+
+#toDoListDiv{
+    margin-bottom: 50px; 
+}

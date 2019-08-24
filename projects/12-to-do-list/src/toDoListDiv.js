@@ -13,8 +13,20 @@ class ToDoItem {
     }
 }
 
-function addToProject(item, projectArr) {
-    projectArr.push(item);
+function showAllToDos() {
+    while (toDoListDivFinal.hasChildNodes()) {
+        toDoListDivFinal.removeChild(toDoListDivFinal.lastChild);
+    }
+    for (let i = 0; i < allEvents.length; i++) {
+        for (let j = 2; j < allEvents[i].length; j++) {
+            console.log("allEvents[i][j].id = " + allEvents[i][j].id);
+
+            let node = new ListNode(allEvents[i][j].id, allEvents[i][j].title + "", allEvents[i][j].descr + "",
+                allEvents[i][j].dueDate + "", allEvents[i][j].prio + "");
+            console.log("node = " + node);
+            document.querySelector("#toDoListDivFinal").appendChild(node);
+        }
+    }
 }
 
 
@@ -237,5 +249,6 @@ function createToDo(arr, id, title, descr, dueDate, prio) {
 export {
     showToDoList,
     updateToDos,
-    editToDoDialog
+    editToDoDialog,
+    showAllToDos
 }
