@@ -1,5 +1,5 @@
 body {
-    background-color: #777;
+    background-color: #333;
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -24,14 +24,24 @@ h1{
     min-height: 100px;
 }
 
+#projectDiv, #toDoListDiv{
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
 footer {
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #777;
+    background-color: #333;
     color: #555;
     text-align: center;
+    border-top: 1px solid #aaa;
+}
+
+footer a {
+    color: #aaaaaa;
 }
 
 .deleteBtn, .editBtn{
@@ -48,7 +58,10 @@ footer {
 }
 
 .listNode {
-    background-color: #555;
+    background-color: #444;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 5px;
 }
 
 
@@ -60,6 +73,26 @@ footer {
     min-height: 200px;
     background-color: #444;
     padding: 20px;
+}
+
+h1, h2 {
+    color: #aaa;
+}
+
+button  {
+    color: #aaa;
+    background-color: #222;
+    padding: 3px;
+    border-radius: 15px;
+    border: 1px solid #aaa;
+    margin: 3px;
+}
+
+input {
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+    box-shadow: none;
 }
 
 #addProject button, #editProject button {
@@ -91,5 +124,5 @@ footer {
 }
 
 #toDoListDiv{
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }

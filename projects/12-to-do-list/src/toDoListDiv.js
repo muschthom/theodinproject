@@ -82,8 +82,8 @@ function showToDoList() {
     if (document.querySelector("#toDoListDiv") === null) {
         let content = document.getElementById("content");
         let toDoListDiv = content.appendChild(component("div", "toDoListDiv", "dark", ""));
-        toDoListDiv.appendChild(component("h2", "", "", "Headline Project-To-Dos"));
-        let addToDo = addToDoBtn(toDoListDiv, "Add a new To Do");
+        toDoListDiv.appendChild(component("h2", "", "", "Project ToDos"));
+        let addToDo = addToDoBtn(toDoListDiv, "Add a new ToDo");
         let toDoListDivFinal = toDoListDiv.appendChild(component("div", "toDoListDivFinal", "", ""));
     }
 

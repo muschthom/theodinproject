@@ -6,7 +6,7 @@ import {showToDoList} from './toDoListDiv';
 import {component, ListNode} from './template';
 function run() {
     let content = document.getElementById("content");
-    content.appendChild(component("h1", "", "", "My To-Do-List-App"));
+    content.appendChild(component("h1", "", "", "My ToDo List App"));
     try {
         setProjectDiv();
         showProjects();
