@@ -1,0 +1,32 @@
+<!--
+@author: muschthom@gmx.de
+date: 04.09.2015
+Exercise according to the training at theodinproject.com, see http://www.theodinproject.com/web-development-101/jquery-basics?ref=lnav
+Images are self made ;)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slideshow</title>
+<link rel="stylesheet" href="stylesheet.css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+	<h1>Simple Slide Show</h1>
+	<div id="slider">
+		<img id="1" src="images/1.gif" />
+		<img id="2" src="images/2.gif" />
+		<img id="3" src="images/3.gif" />
+		<img id="4" src="images/4.gif" />
+	</div>
+	<a href="#" id="left" onclick="prev(); return false">back</a>
+	<a id="right" href="#" onclick="next(); return false">forward</a>
+	</div>
+</body>
+
+</html>
