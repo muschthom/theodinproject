@@ -13,8 +13,7 @@ let emailConfirm = document.getElementById("email-confirm");
 emailConfirm.addEventListener("input", function (event) {
     let email = document.getElementById("email").value;
     let emailConformation = emailConfirm.value;
-    console.log("email = " + email);
-    console.log("email confirm = " + emailConformation);
+    
     if (email === emailConformation){
         emailConfirm.setCustomValidity("");
     } else {
@@ -38,8 +37,7 @@ let passwordConfirm = document.getElementById("password-confirm");
 passwordConfirm.addEventListener("input", function (event) {
     let password = document.getElementById("password").value;
     let passwordConformation = passwordConfirm.value;
-    console.log("password = " + password);
-    console.log("password confirm = " + passwordConformation);
+
     if (password === passwordConformation){
         passwordConfirm.setCustomValidity("");
     } else {
