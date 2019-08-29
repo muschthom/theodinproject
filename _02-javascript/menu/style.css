@@ -1,0 +1,32 @@
+.main {
+  width: 66%;
+  margin-left: 17%;
+}
+
+.invisible {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+ul {
+    opacity: 1;
+    background-color: #aaa;
+    width: 100px;
+    transition: opacity 300ms ease-in-out;
+
+}
+
+.move{
+    margin-left: -1000px;
+    transition: margin-left 700ms;
+}
+
+.ul2{
+    transition: margin-left 700ms;
+
+}
+
+div > div {
+    display: inline-block;
+    width: 30%;
+}
