@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100&display=swap');
+
+body {
+    background-color: #eee;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: #123546;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+}
+
+h1, .add {
+    text-align: center;
+}
+
+.add {
+    width: 25%;
+    margin-left: 37%;
+    margin-bottom: 1em;
+}
+
+td {
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+#input {
+    background: #bbb;
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    min-width: 70%;
+    min-height: 250px;
+    height: 40%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+p, .inline {
+    display: inline;
+}
+
+p {
+    line-height: 2.3em;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+}
+
+
+.block {
+    display: block;
+}
+
+.deleteBtn {
+    width: 27px;
+    height: 32px;
+    color: #999999;
+    border: none;
+    background-size: 27px 32px;
+    background-image: url('img/garbage-1295900_640.png');
+    border-radius: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #123456;
+    text-align: center;
+    color: #bbbbbb;
+
+
+}
+
+a {
+    color: #bbbbbb;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+th {
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #fff;
+}
