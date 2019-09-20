@@ -3,7 +3,7 @@ import './App.css';
 
 let myLibrary = [];
 let counter = 0;
-let tblBody = document.getElementById("tbody");
+let id = 4;
 
 class Book {
     constructor(id, name, author, read) {
@@ -17,23 +17,23 @@ class Book {
 function addBookToLibrary(id, name, author, read) {
     let newBook = new Book(id, name, author, read);
     myLibrary.push(newBook);
+    return id++;
 }
 
 //initial data
 addBookToLibrary(0, "Herr der Ringe", "John Ronald Reuel Tolkien", "read");
 addBookToLibrary(1, "2222", "John Ronald Reuel Tolkien", "read");
 addBookToLibrary(2, "3333", "John Ronald Reuel Tolkien", "read");
-addBookToLibrary(3, "4444", "John Ronald Reuel Tolkien", "read");
+
+let hide = true;
 
 function Header() {
     return (
         <div>
             <h1>Library</h1>
-            <button className="add">Add new book</button>
         </div>
     );
 }
-
 
 function toggleRead(e, arr) {
     // get id of button
@@ -81,41 +81,60 @@ function DeleteButton() {
 }
 
 
-function Table() {
-    return (
-        <table>
-            <tbody>
-            <tr>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Read?</th>
-                <th>Switch?</th>
-                <th>Remove?</th>
-            </tr>
-            <TableData array={myLibrary}/>
+class Table extends React.Component {
+    constructor(props) {
+        super(props);
+        this.setState = {
+            data: myLibrary
+        };
+    }
 
-            </tbody>
+    render() {
+        return (
+            <table>
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Read?</th>
+                    <th>Switch?</th>
+                    <th>Remove?</th>
+                </tr>
+                <TableData data={myLibrary}/>
+                </tbody>
 
-        </table>
+            </table>
 
-    )
+        )
+    }
 }
 
-function TableData(props) {
+class TableData extends React.Component {
+    constructor(props) {
+        super(props);
+        this.setState = {
+            data: myLibrary
+        };
+    }
 
-    const listItems = props.array.map((step) =>
-        <tr key = {step.id}>
-            <td>{step.name}</td>
-            <td>{step.author}</td>
-            <td>{step.read}</td>
-            <td><UnreadButton/></td>
-            <td><DeleteButton/></td>
-        </tr>
-    );
 
-    return (
-        <>{listItems}</>
-    );
+    render() {
+
+        const listItems = this.props.data.map((step) =>
+            <tr key={step.id}>
+                <td>{step.name}</td>
+                <td>{step.author}</td>
+                <td>{step.read}</td>
+                <td><UnreadButton/></td>
+                <td><DeleteButton/></td>
+            </tr>
+        );
+        return (
+            <>{listItems}</>
+        );
+
+
+    }
 }
 
 function Footer() {
@@ -128,14 +147,117 @@ function Footer() {
     );
 }
 
-function App() {
-    return (
-        <div className="main">
-            <Header/>
-            <Table/>
-            <Footer/>
-        </div>
-    );
+class AddBookDialogue extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleShowClick = this.handleShowClick.bind(this);
+        this.handleHideClick = this.handleHideClick.bind(this);
+        this.state = {hide: true};
+    }
+
+    handleShowClick() {
+        console.log("showDiv");
+        this.setState({hide: false});
+    }
+
+    handleHideClick() {
+        let div = document.querySelector("#input");
+        console.log("hideDiv");
+        this.setState({hide: true});
+
+    }
+
+    render() {
+        const hide = this.state.hide;
+
+        let div = <div id="input">
+            <form>
+                <h2>Add a new book!</h2>
+                Name of book:<br/>
+                <input type="text" id="name" name="name" required/><br/>
+                Name of author:<br/>
+                <input type="text" id="author" name="author" required/><br/>
+                Read?<br/>
+                <input type="radio" id="readYes" name="read" value="yes" checked/>Yes<br/>
+                <input type="radio" id="readNo" name="read" value="no"/>No<br/>
+
+
+            </form>
+            <button id="cancelBtn" onClick={this.handleHideClick}>Cancel</button>
+            <button id="addBtn" onClick={(event) => {
+                submitBook();
+                this.handleHideClick()
+            }}>Submit
+            </button>
+        </div>;
+
+        let showBtn = <button className="add" onClick={this.handleShowClick}>Add new book</button>;
+
+        if (hide) {
+            return (
+                <>
+                    {showBtn}
+                </>
+            );
+        } else {
+            return (
+                <>
+                    {showBtn}
+
+                    <div id="cancelAddBook" className="blur" onClick={this.handleHideClick}>
+                    </div>
+                    {div}
+                </>
+            );
+        }
+
+
+    }
+}
+
+function submitBook() {
+    console.log("submit book");
+    console.log("myLibrary = " + myLibrary);
+    //get data from form
+    let name = document.getElementById("name").value;
+    let author = document.getElementById("author").value;
+    let radio = document.getElementsByName('read');
+
+    //get value of radio buttons
+    for (let i = 0, length = radio.length; i < length; i++) {
+        if (radio[i].checked) {
+            ((radio[i].value) === "yes") ? radio = "read" : radio = "unread";
+            break;
+        }
+    }
+
+    //add new entry to array
+    addBookToLibrary(counter, name, author, radio);
+
+}
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: myLibrary
+        };
+        this.setState = {
+            data: myLibrary
+        };
+    }
+
+    render() {
+
+        return (
+            <div className="main">
+                <Header/>
+                <AddBookDialogue/>
+                <Table data={myLibrary}/>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;
