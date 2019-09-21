@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
 
 let myLibrary = [];
 let counter = 0;
@@ -19,6 +20,7 @@ function addBookToLibrary(id, name, author, read) {
     myLibrary.push(newBook);
     return id++;
 }
+
 
 //initial data
 addBookToLibrary(0, "Herr der Ringe", "John Ronald Reuel Tolkien", "read");
@@ -51,127 +53,149 @@ function toggleRead(e, arr) {
     }
 }
 
-function UnreadButton() {
-    return (
-        <button
-            onClick={() => this.toggleRead(this, myLibrary)}
-        >
-            mark as unread
-        </button>
-    )
-}
-
-function DeleteButton() {
-    return (
-        <button className="deleteBtn"
-                id={myLibrary[0].id}
-                onClick={function (e) {
-                    alert("id" + e);
-                    for (var key in e) {
-                        var value = e[key];
-                        console.log("key = " + key + "; value =" + value);
-
-                    }
-                }
-                }
-        >
-
-        </button>
-    )
-}
-
-
-class Table extends React.Component {
-    constructor(props) {
-        super(props);
-        this.setState = {
-            data: myLibrary
-        };
-    }
-
-    render() {
-        return (
-            <table>
-                <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Read?</th>
-                    <th>Switch?</th>
-                    <th>Remove?</th>
-                </tr>
-                <TableData data={myLibrary}/>
-                </tbody>
-
-            </table>
-
-        )
-    }
-}
 
 class TableData extends React.Component {
     constructor(props) {
         super(props);
-        this.setState = {
-            data: myLibrary
-        };
     }
 
-
     render() {
+        console.log("this in table data " + this);
+        console.table(this);
+
+        //this.props.callback(myLibrary);
 
         const listItems = this.props.data.map((step) =>
             <tr key={step.id}>
                 <td>{step.name}</td>
                 <td>{step.author}</td>
                 <td>{step.read}</td>
-                <td><UnreadButton/></td>
-                <td><DeleteButton/></td>
-            </tr>
-        );
-        return (
-            <>{listItems}</>
-        );
+                <td>
+                    <button className="readBtn" id={step.id}
+                            onClick={function () {
+                                let id = step.id;
+                                console.log("id readBtn" + id);
+                                //id = id.slice(1);
+
+                                //search for id in data
+                                for (let i = 0; i < myLibrary.length; i++) {
+                                    //if id found -> change val "read"
+                                    if (myLibrary[i].id == id) {
+                                        myLibrary[i].read === "read" ? myLibrary[i].read = "unread" : myLibrary[i].read = "read";
+                                    }
+                                }
+                            }
+                            }
+                            >
+                                mark as unread
+                                </button>
+                            </td>
+                            <td>
+                            <button className="deleteBtn" id={step.id}
+                            onClick={function () {
+                            let id = step.id;
+                            console.log(" id = " + id);
+                            //console.log(" e.id = " + e.valueOf());
+                            //search for id in data
+                            for (let i = 0; i < myLibrary.length; i++) {
+                            //if id found, remove this element
+                            if (myLibrary[i].id == id) {
+                            myLibrary.splice(i, 1);
+                            }
+                            }
+
+                            }
+                            }
+                            >
+
+                            </button>
+                            </td>
+                            </tr>
+                            )
+                            ;
 
 
-    }
-}
 
-function Footer() {
-    return (
-        <footer>
-            <p>credits: icon by <a href="https://pixabay.com/users/openclipart-vectors-30363/">OpenClipart-Vectors /
-                27427 images</a> on <a
-                href="https://pixabay.com/vectors/garbage-icon-rubbish-trash-1295900/">pixabay.com</a></p>
-        </footer>
-    );
-}
+                            return (
+                            <>{listItems}</>
+                            );
+                            }
+                    }
 
-class AddBookDialogue extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleShowClick = this.handleShowClick.bind(this);
-        this.handleHideClick = this.handleHideClick.bind(this);
-        this.state = {hide: true};
-    }
 
-    handleShowClick() {
-        console.log("showDiv");
-        this.setState({hide: false});
-    }
+                    function Footer() {
+                    return (
+                    <footer>
+                    <p>credits: icon by <a href="https://pixabay.com/users/openclipart-vectors-30363/">OpenClipart-Vectors
+                        /
+                        27427 images</a> on <a
+                        href="https://pixabay.com/vectors/garbage-icon-rubbish-trash-1295900/">pixabay.com</a></p>
+                </footer>
+                );
+                }
 
-    handleHideClick() {
-        let div = document.querySelector("#input");
-        console.log("hideDiv");
-        this.setState({hide: true});
+                class AddBookDialogue extends React.Component {
+                constructor(props) {
+                super(props);
+                this.handleShowClick = this.handleShowClick.bind(this);
+                this.handleHideClick = this.handleHideClick.bind(this);
+                this.submitBook = this.submitBook.bind(this);
 
-    }
+                this.state = {
+                hide: true,
+            };
+            }
 
-    render() {
-        const hide = this.state.hide;
 
-        let div = <div id="input">
-            <form>
+                getContent(myLibrary) {
+                console.log("callback AddBookDialogue");
+
+                this.props.callback(myLibrary);
+            }
+
+                handleShowClick() {
+                console.log("showDiv");
+                this.setState({hide: false});
+            }
+
+                handleHideClick() {
+                let div = document.querySelector("#input");
+                console.log("hideDiv");
+                this.setState({hide: true});
+            }
+
+                submitBook(myLibrary) {
+                console.log("submit book");
+                console.log("myLibrary = " + myLibrary);
+                console.table(myLibrary);
+                //get data from form
+                let name = document.getElementById("name").value;
+                let author = document.getElementById("author").value;
+                let radio = document.getElementsByName('read');
+
+                //get value of radio buttons
+                for (let i = 0, length = radio.length; i < length; i++) {
+                if (radio[i].checked) {
+                ((radio[i].value) === "yes") ? radio = "read" : radio = "unread";
+                break;
+            }
+            }
+
+                //add new entry to array
+                //addBookToLibrary(counter, name, author, radio);
+                let newBook = new Book(id, name, author, null);
+                //myLibrary.push(newBook);
+                myLibrary.push(newBook);
+
+                return id++;
+
+            }
+
+                render() {
+                const hide = this.state.hide;
+
+                let div = <div id="input">
+                <form>
                 <h2>Add a new book!</h2>
                 Name of book:<br/>
                 <input type="text" id="name" name="name" required/><br/>
@@ -182,82 +206,88 @@ class AddBookDialogue extends React.Component {
                 <input type="radio" id="readNo" name="read" value="no"/>No<br/>
 
 
-            </form>
-            <button id="cancelBtn" onClick={this.handleHideClick}>Cancel</button>
-            <button id="addBtn" onClick={(event) => {
-                submitBook();
-                this.handleHideClick()
-            }}>Submit
-            </button>
-        </div>;
+                </form>
+                <button id="cancelBtn" onClick={this.handleHideClick}>Cancel</button>
+                <button id="addBtn" onClick={() => {
+                    this.submitBook(myLibrary);
+                    this.handleHideClick();
+                    console.log("this in AddBookDialogue" + this);
+                    console.table(this);
+                    this.getContent(myLibrary);
 
-        let showBtn = <button className="add" onClick={this.handleShowClick}>Add new book</button>;
+                }}>Submit
+                </button>
+                </div>;
 
-        if (hide) {
-            return (
+                let showBtn = <button className="add" onClick={this.handleShowClick}>Add new book</button>;
+
+                if (hide) {
+                return (
                 <>
-                    {showBtn}
+                {showBtn}
                 </>
-            );
-        } else {
-            return (
+                );
+            } else {
+                return (
                 <>
-                    {showBtn}
+                {showBtn}
 
-                    <div id="cancelAddBook" className="blur" onClick={this.handleHideClick}>
-                    </div>
-                    {div}
+                <div id="cancelAddBook" className="blur" onClick={this.handleHideClick}>
+                </div>
+                {div}
                 </>
-            );
-        }
+                );
+            }
 
 
-    }
-}
+            }
 
-function submitBook() {
-    console.log("submit book");
-    console.log("myLibrary = " + myLibrary);
-    //get data from form
-    let name = document.getElementById("name").value;
-    let author = document.getElementById("author").value;
-    let radio = document.getElementsByName('read');
+            }
 
-    //get value of radio buttons
-    for (let i = 0, length = radio.length; i < length; i++) {
-        if (radio[i].checked) {
-            ((radio[i].value) === "yes") ? radio = "read" : radio = "unread";
-            break;
-        }
-    }
 
-    //add new entry to array
-    addBookToLibrary(counter, name, author, radio);
+                class App extends React.Component {
+                constructor(props) {
+                super(props);
+                this.state = {
+                hide: true,
+                data: myLibrary
+            };
 
-}
+                this.getDataFromForm = this.getDataFromForm.bind(this);
+            }
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: myLibrary
-        };
-        this.setState = {
-            data: myLibrary
-        };
-    }
+                getDataFromForm(params) {
+                console.log("getDataFromForm");
+                this.setState({
+                data: params
+            });
+                console.log("state = " + this.state);
+            }
 
-    render() {
+                render() {
 
-        return (
-            <div className="main">
+                return (
+                <div className="main">
                 <Header/>
-                <AddBookDialogue/>
-                <Table data={myLibrary}/>
-                <Footer/>
-            </div>
-        );
-    }
-}
+                <AddBookDialogue callback={this.getDataFromForm}/>
+                <table>
+                <tbody>
+                <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Read?</th>
+                <th>Switch?</th>
+                <th>Remove?</th>
+                </tr>
+                </tbody>
+                <TableData data={this.state.data} />
 
-export default App;
+                </table>
+
+                <Footer/>
+                </div>
+                );
+            }
+            }
+
+                export default App;
