@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color: cornflowerblue">
+<h1>Giphy img API test</h1>
+<button>Click me to see new cat image</button>
+<br/><br/><br/>
+<input type="text" placeholder="dogs" value="dogs">
+<button id="search">Show image matching input</button>
+<br/>
+<img src="#">
+<script>
+    let searchValue = "";
+    let input = "";
+
+    let searchBtn = document.querySelector("#search");
+    searchBtn.addEventListener("click", search);
+
+    function search() {
+        let searchItems = document.querySelector("input").value;
+
+        fetch('https://api.giphy.com/v1/gifs/translate?api_key=etoMXrW1fZ8tlHuzEiKIToaNCnnYiGQz&s=' + searchItems, {mode: 'cors'})
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (response) {
+                img.src = response.data.images.original.url;
+            })
+            .catch(function (error) {
+                console.log(error);
+                fetch('https://api.giphy.com/v1/gifs/translate?api_key=etoMXrW1fZ8tlHuzEiKIToaNCnnYiGQz&s=error' + searchItems, {mode: 'cors'})
+                    .then(function (response) {
+                        return response.json()
+                    })
+                    .then(function (response) {
+                        img.src = response.data.images.original.url;
+                    })
+            });
+    }
+
+    const img = document.querySelector('img');
+    getImage();
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", getImage);
+
+    function getImage() {
+        fetch('https://api.giphy.com/v1/gifs/translate?api_key=etoMXrW1fZ8tlHuzEiKIToaNCnnYiGQz&s=cats', {mode: 'cors'})
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (response) {
+                img.src = response.data.images.original.url;
+            })
+    }
+</script>
+</body>
+</html>
