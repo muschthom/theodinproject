@@ -1,0 +1,231 @@
+
+/*iphone 5/SE
+ */
+@media screen and (device-aspect-ratio: 40/71) {
+
+    body, header, main, button {
+        background: #1c1f1d;
+        font-family: "Century Gothic", Arial, sans-serif;
+        color: #9f978b;
+    }
+
+    body {
+        background-color: #0b071f;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    .app {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        background-color: #1c1f1d;
+    }
+
+
+    h1 {
+        text-align: center;
+        display: inline;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        font-weight: 400;
+    }
+
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .header__title {
+        font-weight: 400;
+        width: 100%;
+        font-size: 10em;
+        margin: 0 0 0 35px;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+
+    .header__subtitle {
+        white-space: pre-line;
+        font-weight: 400;
+        font-size: 3em;
+        background: #1c1f1d;
+        margin-top: 60px;
+        text-align: center;
+        opacity: 0.5;
+
+
+    }
+
+    #burger {
+        width: 8em;
+        height: 8em;
+        background-image: url("../img/burger.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        float: right;
+        margin-top: 4em;
+        margin-right: 2em;
+    }
+
+    h1{
+        text-align: center;
+    }
+    .main {
+        padding-top: 0px;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 5% 0 5%;
+        width: 90%;
+
+    }
+
+    #days-button {
+        margin: 45px 15px 0 15px;
+    }
+
+    input, #searchCity{
+        width: 90%;
+        font-size: 3em;
+        border-radius: 10px;
+        border: none;
+        text-decoration: none;
+        font-size: 3em;
+        margin: 0.4em;
+    }
+
+
+
+    #menu {
+        position: absolute;
+        top: 0;
+        float: left;
+        background-color: #1c1f1d;
+        width: 84%;
+        height: 30%;
+    }
+
+    .dayButton.active, #searchCity {
+        color: #1c1f1d;
+        background-color: #9f978b;
+        border-radius: 10px;
+
+    }
+
+    h2{
+        font-size: 3em;
+    }
+
+    .dayButton {
+        width: 32%;
+
+        border: none;
+        text-decoration: none;
+        font-size: 3em;
+    }
+
+    #today {
+        float: left;
+        width: 30%;
+    }
+
+    #tomorrow {
+        width: 37%;
+    }
+
+    #after-tomorrow {
+        width: 30%;
+        float: right;
+    }
+
+    #curr-img {
+        margin: 5% 5% 5% 5%;
+        width: 90%;
+    }
+
+    #img-list {
+        margin-left: -4%;
+        margin-top: -35px;
+        width: 310%;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    }
+
+    #curr-temp-nr {
+        width: 100%;
+        position: fixed;
+        top: 32%;
+        font-size: 12em;
+        font-weight: 400;
+        text-align: center;
+        margin-left: -6%;
+    }
+
+    canvas {
+        width: 300%;
+        height: 15em;
+
+        margin-top: -15em;
+    }
+
+    #temp-preview {
+        overflow-y: inherit;
+    }
+
+    #line-bg {
+        height: 15em;
+        width: 300%;
+    }
+
+    .show-val {
+        width: 85%;
+
+    }
+
+
+    #nbr-list {
+        margin-top: -50px;
+    }
+
+    span {
+        font-size: 20px;
+        margin: 3.95%;
+    }
+
+    span:first-child {
+        margin-left: 0;
+    }
+
+    span:last-child {
+        margin-right: 0;
+    }
+
+
+    /*
+    Hier ist vorhandener Code
+     */
+    html {
+        overflow: hidden;
+    }
+
+}

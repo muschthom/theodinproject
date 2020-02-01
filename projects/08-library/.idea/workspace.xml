@@ -2,53 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0a27db-eaab-4f93-98eb-5730e0c73f3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/04 - Array Cardio Day 1/index-START.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/04 - Array Cardio Day 1/index-START.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/04 - Array Cardio Day 1/index-FINISHED.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/04 - Array Cardio Day 1/index-START.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/05 - Flex Panel Gallery/index-FINISHED.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_01-webdev-101/JavaScript30/05 - Flex Panel Gallery/index-START.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../06-calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../06-calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../07-pomodoro-counter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../07-pomodoro-counter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09-tic-tac-toe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../09-tic-tac-toe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10-library-refactoring/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../10-library-refactoring/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.idea/11-restaurant-page.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/dist/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/src/img/coffee-984328_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11-restaurant-page/webpack.config.js" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="165" column="51" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,61 +40,11 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>AC</find>
-      <find>!isNaN(parseInt(val)) &amp;&amp;</find>
-      <find>fontS</find>
-      <find>commaSet1</find>
-      <find>commaSet2</find>
-      <find>setting</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app.html" />
-        <option value="$PROJECT_DIR$/normalize.css" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/script.js" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="299" />
-    <option name="y" value="50" />
-    <option name="width" value="911" />
-    <option name="height" value="728" />
-  </component>
+  <component name="ProjectId" id="1PlvuuOWGqIECOqBkrCzBybnRq9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="08-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="08-library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="08-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="08-library" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -160,81 +91,26 @@
       <workItem from="1564747411117" duration="741000" />
       <workItem from="1564758647927" duration="31791000" />
       <workItem from="1564941038791" duration="798000" />
-      <workItem from="1565190774917" duration="18932000" />
+      <workItem from="1565190774917" duration="19533000" />
+      <workItem from="1566461726171" duration="1388000" />
+      <workItem from="1568897402391" duration="5947000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100572000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16220239" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../wetterapp-unfinished/wetterapp/index.html" />
-    <entry file="file://$PROJECT_DIR$/img/stop.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/pause.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/update-arrows.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/play-button.png" />
-    <entry file="file://$PROJECT_DIR$/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/garbage-1295900_640.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="165" column="51" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

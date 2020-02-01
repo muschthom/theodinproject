@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+</head>
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <h1 class="header__title" id="city">Kopenhagen</h1>
+        <button id="burger" class="headerButton"></button>
+    </header>
+
+    <main class="main" id="main">
+        <h2 class="header__subtitle" id="date">11:29 Uhr, 26.05.2019</h2>
+        <div id="days-button">
+            <button id="city1" class="dayButton active " aria-label="today">Leipzig</button>
+            <button id="city2" class="dayButton inactive" aria-label="tomorrow">Lübeck</button>
+            <button id="city3" class="dayButton inactive" aria-label="Add">Thale</button>
+        </div>
+
+
+        <div class="curr-temp">
+            <img id="curr-img" src="img/50n.png">
+            <h2 id="curr-temp-nr">12°</h2>
+        </div>
+
+        <div id="temp-preview">
+            <img id="line-bg" src="img/temp-list-hr.png">
+            <canvas id="myCanvas"></canvas>
+
+            <div id="img-list">
+                <img id="img0" class="show-val" src="img/01n-fade.png">
+                <img id="img1" class="show-val" src="img/01n-fade.png">
+                <img id="img2" class="show-val" src="img/01n-fade.png">
+                <img id="img3" class="show-val" src="img/01d-fade.png">
+                <img id="img4" class="show-val" src="img/01d-fade.png">
+                <img id="img5" class="show-val" src="img/01d-fade.png">
+                <img id="img6" class="show-val" src="img/01d-fade.png">
+                <img id="img7" class="show-val" src="img/01d-fade.png">
+                <img id="img8" class="show-val" src="img/01n-fade.png">
+                <img id="img9" class="show-val" src="img/01n-fade.png">
+                <img id="img10" class="show-val" src="img/09n.png">
+                <img id="img11" class="show-val" src="img/10d.png">
+                <img id="img12" class="show-val" src="img/10n.png">
+                <img id="img13" class="show-val" src="img/11d.png">
+                <img id="img14" class="show-val" src="img/11n.png">
+                <img id="img15" class="show-val" src="img/13d.png">
+                <img id="img16" class="show-val" src="img/13n.png">
+                <img id="img17" class="show-val" src="img/50d.png">
+                <img id="img18" class="show-val" src="img/50n.png">
+                <img id="img19" class="show-val" src="img/01d.png">
+                <img id="img20" class="show-val" src="img/01n.png">
+                <img id="img21" class="show-val" src="img/02d.png">
+                <img id="img22" class="show-val" src="img/02n.png">
+                <img id="img23" class="show-val" src="img/03d.png">
+                <img id="img24" class="show-val" src="img/03n.png">
+            </div>
+        </div>
+
+    </main>
+
+    <div id="menu" class="hidden">
+        <h2>Search Town</h2>
+        <input type="text" placeholder="Insert town">
+        <button id="searchCity">Search</button>
+    </div>
+</div>
+
+<!--
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+<script src="scripts/app.js" async></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function (registration) {
+                console.log('Registered:', registration);
+            })
+            .catch(function (error) {
+                console.log('Registration failed: ', error);
+            });
+    }
+</script>
+</body>
+</html>
